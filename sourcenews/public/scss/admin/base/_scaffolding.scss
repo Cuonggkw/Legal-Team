@@ -1,0 +1,60 @@
+:root{
+	font-size: 62.5%;
+}
+
+html,body{
+	height: 100%;
+	font-family: $font-family-base !important;
+	font-size: 62.5% !important;
+	font-weight: $font-weight-base !important;
+}
+
+div[class^='Mui'],label[class^='Mui'],span[class^='Mui']{
+	font-family: $font-family-base !important;
+	font-size: $font-size-fullPage;
+}
+
+#__next{
+	min-height: 100%;
+	display: flex;
+	position: relative;
+	color: $text-color-primary;
+	font-size: $font-size-fullPage;
+}
+
+h1,h2,h3,h4,h5,h6,b,strong{
+	font-weight: $headings-font-weight !important;
+	margin: 0;
+}
+
+p{
+	margin: 0;
+}
+
+a{
+	cursor: pointer;
+	text-decoration: none;
+	color: $text-color-primary;
+
+	&:hover{
+		color: $primary;
+		text-decoration: none;
+	}
+}
+
+i[class^="fa"], svg g [fill], svg, a{
+	@include transition(all 0.2s linear);
+}
+
+.flex-root{
+	flex: 1;
+}
+
+.flex-center{
+	justify-content: center;
+	align-items: center;
+}
+
+div[class^="Mui"]{
+	padding: 0;
+}

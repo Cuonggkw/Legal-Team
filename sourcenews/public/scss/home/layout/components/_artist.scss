@@ -1,0 +1,78 @@
+.nl-artist__card{
+	position: relative;
+	text-align: center;
+	margin-bottom: $artistCard-margin-bottom;
+	display: flex;
+	flex-direction: column;
+
+	a{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.img{
+		display: flex;
+		align-self: center;
+		position: relative;
+		overflow: hidden;
+		@include border-radius(50%);
+
+		&::before{
+			content: '';
+			position: absolute;
+			pointer-events: none;
+			top: -85px;
+			left: -100%;
+			width: 100px;
+			height: 350px;
+			background: linear-gradient(to right, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.13) 84%, rgba(255,255,255,0.5) 100%, rgba(255,255,255,0) 100%
+			);
+			@include rotate(20deg);
+			@include opacity(0);
+		}
+
+		img{
+			overflow: hidden;
+			width: $artistCard-img-maxWidthHeight;
+			@include border-radius(50%);
+			object-fit: cover;
+		}
+	}
+
+	h4{
+		color: $artistCard-title-color;
+		margin-top: 10px;
+		font-size: $artistCard-title-fontSize;
+		width: 100%;
+		@include transition(all .2s linear);
+
+		@include media-breakpoint-down(lg){
+			font-size: 1.3rem;
+		}
+
+		@include media-breakpoint-only(md){
+			font-size: $artistCard-title-fontSize;
+		}
+	}
+
+	&:hover{
+
+		h4{
+			color: $artistCard-title-colorHover;
+		}
+
+		.img{
+
+			&::before{
+				@include opacity(1);
+				left: 150%;
+				transition-property: left, opacity;
+			    transition-duration: .5s, .1s;
+			    transition-timing-function: ease;
+			}
+		}
+	}
+}

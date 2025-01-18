@@ -1,0 +1,63 @@
+@import 
+	'../../core/abstracts/functions',
+	'../../core/abstracts/variables',
+	'../../core/abstracts/mixins';
+
+
+$colors-light:(
+	bg-body: #000,
+	bg-primary: #000,
+	bg-secondary: #121212,
+	bg-third: #33373E,
+	bg-four: #393939,
+	bg-five: #7d7d7d,
+	bg-six: #2d2f34,
+	bg-sevent: #21232B,
+	bg-eight: #1b1b20,
+	bg-night: #21232B,
+	bg-ten: #121212,
+	bg-ele: #7d7d7d,
+	bg-twe: #424242,
+	text-primary: #fff,
+	text-secondary: #d4d4d4,
+	text-third: #d4d4d4,
+	text-four: #fff,
+	text-five: #d4d4d4,
+	text-six: #d4d4d4,
+	text-sevent: #fff,
+	text-eight: #7d7d7d,
+	nav-link-color-active: #fff,
+	lineDM: rgba(#f0f0f0,.1),
+	lineChat: rgba(#f0f0f0,.1),
+	line-thrid: rgba(#d4d4d4,.1),
+	banner-gradiant: linear-gradient(180deg, rgba(#121212, 0) 0%, rgba(#121212, 0.5) 45%, rgba(#121212,1) 100%),
+	bg-MuiSkeleton:  rgba(#202026,.8),
+	bg-comment-textarea: #393939,
+	bg-selected-list-country: rgba(#fff,.08),
+	bg-focus-list-country: rgba(#fff,.04),
+	MuiFilledInput-border-bottom: rgba(#fff,.4),
+	bg-cardBody: #21232B,
+	bgPageLogin: #18191a,
+	bgInput: #242526,
+	bgCheckbox: #242526,
+	textInput: #b0b3b8,
+	textHBa: #e4e6eb,
+	fillSvg: #b5b5c3,
+	filterLogo : 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)',
+	MuiIconButton-background-hover: rgba(#3a3b3c,.5),
+	bg-cardEvent: #fff,
+);
+
+// :root{
+// 	@each $name, $color in $colors-light{
+// 		--color-#{$name}: #{$color}
+// 	}
+
+// 	--theme: 'light'
+// }
+
+.__tt-light-mode{
+	@each $name, $color in $colors-light{
+		--color-#{$name}: #{$color}
+	}
+}

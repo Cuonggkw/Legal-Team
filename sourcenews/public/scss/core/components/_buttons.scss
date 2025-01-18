@@ -1,0 +1,141 @@
+@import 'core/mixins/buttons';
+
+.btn{
+    display: flex !important;
+    align-items: center !important;
+    border: $btn-border-width solid transparent !important;
+    text-transform: $btn-transform !important;
+    font-family: $btn-font-family !important;
+    font-weight: $btn-font-weight !important;
+    color: $btn-color !important;
+    height: $btn-height;
+    cursor: if($enable-pointer-cursor-for-buttons, pointer, default) !important;
+    box-shadow: $btn-boxshadow !important;
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    @include transition($btn-transition !important);
+
+    .MuiButton-label{
+        max-height: 100%;
+        font-size: $btn-font-size;
+    }
+
+    &.font-weight-bold{
+        font-weight: 700 !important;
+    }
+}
+
+.border-0{
+    border: 0 !important;
+}
+
+.btn-icon{
+    justify-content: center !important;
+    padding: 0 !important;
+    min-width: inherit !important;
+}
+
+.btn-light{
+    color: $btn-light-color !important;
+    background-color: $btn-light-background !important;
+    border-color: $btn-light-background !important;
+
+    &:hover{
+        background-color: $btn-light-background-hover !important;
+        border-color: $btn-light-background-hover !important;
+    }
+}
+
+.btn-reset{
+    border: 0 !important;
+    outline: 0 !important;
+    padding: 0 !important;
+    min-width: auto !important;
+    background: transparent !important;
+    @include box-shadow(none !important);
+    @include transition(all 0.2s linear);
+}
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+    @if $color == 'gradiant'{
+        .btn-#{$color} {
+            position: relative;
+            border: 0 !important;
+            background: $btn-gradiant !important;
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $btn-gradiant-hover !important;
+                z-index: 1;
+                @include transition(opacity 0.3s linear);
+                @include opacity(0);
+                @include border-radius($btn-border-radius);
+            }
+
+            span{
+                z-index: 5;
+            }
+
+            &:hover{
+                &::before{
+                    @include opacity(1);
+                }
+            }
+        }
+
+        .btn-outline-#{$color} {
+            border: $btn-border-width solid !important;
+            border-image-slice: 1 !important;
+            border-image-source: $btn-gradiant !important;
+            background: transparent !important;
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $btn-gradiant !important;
+                z-index: 1;
+                @include transition(opacity 0.3s linear);
+                @include opacity(0);
+            }
+
+            span{
+                position: relative;
+                z-index: 5;
+            }
+
+            &:hover{
+                &::before{
+                    @include opacity(1);
+                }
+            }
+        }
+    } @else {
+        .btn-#{$color} {
+            @include button-variant($value,$value...);
+        }
+
+        .btn-outline-#{$color} {
+            @include button-outline-variant($value);
+        }
+
+        .btn-light-#{$color} {
+            @include button-light-variant($value);
+        }
+
+        .btn-hover-#{$color} {
+            @include button-hover-variant($value);
+        }
+    }
+}

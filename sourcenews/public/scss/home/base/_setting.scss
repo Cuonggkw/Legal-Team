@@ -1,0 +1,421 @@
+
+$font-size-fullPage: 1.6rem;
+
+// container padding, row margin
+$grid-gutter-width: 50px;
+
+
+// Color system
+//
+// system
+
+$green	        : #45bd62;
+$red	        : #f02849;
+$blue	        : #3699ff;
+$orange         : #f7b928 ;
+$gray           : #b5b5c3;
+$gradiant       : linear-gradient(90deg,#901c9c 0,#5661e1 100%);
+$gradiant-hover : linear-gradient(90deg,#901c9c 100%,#5661e1 100%);
+
+$primary       : #F04438;
+$secondary     : $green;
+$txt-primary   : #393939;
+$txt-secondary : #7d7d7d;
+$bg-modal      : rgba(95, 99, 104, 0.2);
+
+// Color light + dark Mode
+//
+// background, text, nav link
+ 
+$bg-body                      : getColor(bg-body); //f0f0f0 - 000
+$bg-primary                   : getColor(bg-primary); // 000 - 1b1d22
+$bg-secondary                 : getColor(bg-secondary); // fff - 121212
+$bg-third                     : getColor(bg-third); // f0f0f0 - 33373E
+$bg-four                      : getColor(bg-four); // d4d4d4 - 393939
+$bg-five                      : getColor(bg-five); // fff - 7d7d7d
+$bg-six                       : getColor(bg-six); // d4d4d4 - 2d2f34
+$bg-sevent                    : getColor(bg-sevent); // f0f0f0 - 21232b
+$bg-eight                     : getColor(bg-eight); // f0f0f0 - 181B20
+$bg-night                     : getColor(bg-night); // fff - 21232B
+$bg-ten                       : getColor(bg-ten); // f0f0f0 - 121212
+$bg-ele                       : getColor(bg-ele); // d4d4d4 - 7d7d7d
+$bg-twe                       : getColor(bg-twe); // fff - 424242
+$text-primary                 : getColor(text-primary); // 393939 - fff
+$text-secondary               : getColor(text-secondary); // 393939 - d4d4d4
+$text-third                   : getColor(text-third); // 7d7d7d - d4d4d4
+$text-four                    : getColor(text-four); // 7d7d7d - fff
+$text-five                    : getColor(text-five); // 000 - d4d4d4
+$text-six                     : getColor(text-six); // 3 3 3 - d4d4d4
+$text-sevent                  : getColor(text-sevent); // 3 3 3 - fff
+$text-eight                   : getColor(text-eight); // 606060 - 7d7d7d
+
+$nav-link-color-active        : getColor(nav-link-color-active);
+$lineDM                       : getColor(lineDM);
+$lineChat     		          : getColor(lineChat);
+$line-thrid                   : getColor(line-thrid);
+$banner-gradiant              : getColor(banner-gradiant);
+$bg-cardBody                  : getColor(bg-cardBody);
+$bg-MuiSkeleton               : getColor(bg-MuiSkeleton);
+$bg-comment-textarea          : getColor(bg-comment-textarea);
+$bg-selected-list-country     : getColor(bg-selected-list-country);
+$bg-focus-list-country        : getColor(bg-focus-list-country);
+$MuiFilledInput-border-bottom : getColor(MuiFilledInput-border-bottom);
+$bg-cardEvent                 : getColor(bg-cardEvent);
+
+
+
+// Typography
+//
+// font
+
+$font-family-base  : 'Nunito Sans', sans-serif;
+$font-family-bold  : 'Nunito Sans', sans-serif;
+$font-family-light : 'Nunito Sans', sans-serif;
+$font-icon		   : 'Font Awesome 5 Duotone';
+$font-secondary	   : 'San Francisco Text';
+
+$font-size-body	      : 1.6rem;
+$headings-font-weight : 700;
+$container-max-width  : 1440px;
+
+
+// Link
+//
+// text
+ 
+$link-color      : #fff;
+$link-hover-color: #fff !default;
+
+
+
+// Header
+//
+// height, background, padding, color, icon-size
+
+$header-height-pc  : 160px;
+$header-height-mb  : 55px;
+$header-background : $bg-primary;
+$header-shadow     : 0px 4px 16px rgba(0, 0, 0, 0.1);
+$header-padding    : 0 50px;
+$header-text-color : $text-secondary;
+$header-icon-size  : 24px;
+
+
+
+// search
+//
+// Autocomplete
+
+$mBGuide-search: $bg-secondary;
+$searchAtc-background         : $bg-primary;
+$searchAtc-borderRadius       : 6px;
+$searchAtc-marginTop          : 23px;
+$searchAtc-link-color         : $text-secondary;
+$searchAtc-font-size          : 1.4rem;
+$searchAtc-resulte-padding    : 5px 20px;
+$searchAtc-suggess-link-color : $text-third;
+$searchAtc-suggess-link-bg    : $bg-third;
+
+
+
+// Profile
+//
+// dropdown
+
+$dropdownProfile-background  : $bg-primary;
+$dropdownProfile-min-width   : 325px;
+$dropdownProfile-link        : $text-secondary;
+$dropdownProfile-padding     : 20px 25px 10px;
+$dropdownProfile-avatar-size : 55px;
+$dropdownProfile-line        : 1px solid $lineDM;
+$dropdownProfile-margin-top  : 22px;
+
+
+
+// footer
+//
+// background, padding, color, font-size
+
+
+$footer-background           : #000;
+$footer-fontsize             : 1.4rem;
+$footer-text-color-primary   : #fff;
+$footer-text-color-secondary : $txt-secondary;
+
+
+
+// navMobile
+//
+// background, padding, color, font-size
+
+
+$navMobile-background : $bg-primary;
+$navMobile-height     : 50px;
+$navMobile-text-color : $text-secondary;
+$navMobile-font-size  : 1rem;
+
+
+
+// headerTitleMMobile
+//
+// background, height, 
+
+
+$headerTitleMb-height     : 54px;
+$headerTitleMb-background : $primary;
+
+
+
+// noti
+//
+// background, width, 
+
+
+$noti-background : $bg-primary;
+$noti-padding    : 20px 25px 10px;
+$noti-line       : 1px solid $lineDM;
+$noti-margin-top : 28px;
+
+
+
+// card
+//
+// background, width, 
+
+
+$card-body-background       : transparent;
+$card-body-bg               : $bg-cardBody;
+$card-image-borderRadius    : 16px;
+$card-date-font-size        : 1.1rem;
+$card-date-color            : #7d7d7d;
+$card-date-margin-bottom    : 10px;
+$card-title-font-size       : 1.6rem;
+$card-title-font-size-MB    : 1.4rem;
+$card-title-color           : $text-primary;
+$card-time-font-size        : 1rem;
+$card-time-color            : $text-eight;
+$card-programme-color       : $primary;
+$card-programme-color-hover : $text-primary;
+$card-programme-font-size   : 1.4rem;
+$card-programme-dot         : $bg-four;
+$card-process-height        : 6px;
+$card-process-background    : #393939;
+
+
+
+// banner
+//
+// background gradiant, 
+
+
+$banner-background-gradiant: $banner-gradiant;
+$banner-margin-top-pc  : -160px;
+$banner-margin-top-mb  : -55px;
+
+
+// sl-section
+//
+// margin-top, section__header-height, font-size h2, color
+
+
+$slSection-margin-top         : 30px;
+$slSection-header-height      : 70px;
+$slSection-header-title-size  : 3.2rem;
+$slSection-header-title-color : $text-primary;
+$slSection-header-more-size   : 1.4rem;
+$slSection-header-more-color  : $text-third;
+$slSection-swpBtn-widthHeight : 48px;
+$slSection-swpBtn-background  : $bg-five;
+$slSection-swpBtn-text-color  : $text-four;
+
+
+
+// artist card
+//
+// margin-bottom, img width height, title color,
+
+
+$artistCard-margin-bottom      : 25px;
+$artistCard-img-maxWidthHeight : 147px;
+$artistCard-title-color        : $text-primary;
+$artistCard-title-colorHover   : $primary;
+$artistCard-title-fontSize     : 1.6rem;
+
+
+
+// chanel
+//
+// 
+
+$chanelDetail-paddingBot             : 26px;
+$chanelDetail-banner-bgRadiant       : $banner-gradiant;
+$chanelDetail-title-color            : $text-primary;
+$chanelDetail-title-fontSize         : 4.8rem;
+$chanelDetail-title-fontSize-MB      : 2.8rem;
+$chanelDetail-subtit-color           : $primary;
+$chanelDetail-subtit-fontSize        : 1.4rem;
+$chanelDetail-description-fontSize   : 1.6rem;
+$chanelDetail-description-color      : $text-four;
+$chanelDetail-description-height     : 90px;
+$chanelDetail-description-lineHeight : 1.8;
+$chanelDetail-more-color             : #7d7d7d;
+$chanelDetail-more-span-fontSize     : 1.4rem;
+$chanelDetail-more-i-fontSize        : 1.8rem;
+$chanelDetail-list-marginTop         : 60px;
+$chanelDetail-list-card-marginBot    : 24px;
+
+
+
+// video
+//
+// title
+
+
+$videoDetail-title-color            : $text-primary;
+$videoDetail-title-fontSize         : 3.4rem;
+$videoDetail-ctn-color              : $text-primary;
+$videoDetail-ctn-fontSize           : 1.6rem;
+$videoDetail-title-comment-fontSize : 2rem;
+$videoDetail-title-comment-color    : $text-primary;
+$videoDetail-avatar-size            : 55px;
+$videoDetail-comment-textarea-bg    : $bg-comment-textarea;
+$videoDetail-comment-name-color     : $text-sevent;
+$videoDetail-comment-name-fontSize  : 1.6rem;
+$videoDetail-comment-text-color     : $text-six;
+$videoDetail-comment-iconSend-color : $text-four;
+
+
+
+
+// livestream
+//
+// title
+
+
+$live-chat-background          : $bg-sevent;
+$live-chat-header-bg           : $bg-six;
+$live-chat-title-color         : $text-primary;
+$live-chat-title-fontSize      : 1.6rem;
+$live-chat-hide-color          : $text-secondary;
+$live-chat-hide-fontSize       : 1.4rem;
+$live-chat-border              : $lineChat;
+$live-chat-mess-color          : $text-third;
+$live-chat-mess-strong-color   : $text-primary;
+$live-chat-textarea-background : #fff;
+$live-chat-send                : #7d7d7d;
+
+
+
+
+// bg textarea
+//
+// 
+
+$frmControl-bg: $bg-comment-textarea;
+
+
+
+
+// user
+//
+// 
+
+$userLayout-color                 : #7d7d7d;
+$userLayout-left-background       : $bg-eight;
+$userLayout-left-paddingTop       : 60px;
+$userLayout-left-navLink-color    : $text-secondary;
+$userLayout-left-navLink-fontSize : 1.6rem;
+$userLayout-left-navLink-height   : 60px;
+$userLayout-left-navLink-weight   : 400;
+$userLayout-left-navLink-hover    : $bg-night;
+$userLayout-right-textTitle-color : $text-primary;
+$userLayout-right-text-color      : $text-four;
+$userLayout-right-line-color      : $line-thrid;
+$userLayout-pucrhased-background  : $bg-sevent;
+$userLayout-pucrhased-titleItem   : $text-primary;
+$userLayout-support-background    : $bg-sevent;
+$userLayout-support-item-height   : 75px;
+$userLayout-support-p-color       : $text-primary;
+
+
+
+
+// modal
+//
+// 
+
+$payment-title : $text-secondary;
+$modalLayout-color                : #7d7d7d;
+$modal-container-background       : $bg-modal;
+$modal-container-boxShadow        : 0px 4px 16px rgba(0, 0, 0, 0.1);
+$modal-close-color                : $text-five;
+$modal-tabs-background            : $bg-ten;
+$modal-tabs-label-color           : $text-five;
+$modal-label-color                : $text-third;
+$modal-input-color                : $text-secondary;
+$modal-input-icon-color           : $modalLayout-color;
+$modal-title-h4-fontSize          : 2.4rem;
+$modal-title-h4-color             : $primary;
+$modal-title-p-color              : $text-secondary;
+$modal-title-p-color              : $text-secondary;
+$modal-button-disabled-background : $bg-ele;
+$modal-payment-item-background    : $bg-sevent;
+$modal-payment-item-text-color    : $text-primary;
+$modal-phoneLisst-span-color      : $text-third;
+$modal-textFooter-color           : $text-secondary;
+
+
+
+
+// page search
+//
+// 
+
+$pageSearch-head-background        : $bg-eight;
+$pageSearch-head-h2-color          : $text-secondary;
+$pageSearch-head-h2-fontSize       : 2rem;
+$pageSearch-head-input-background  : #fff;
+$pageSearch-head-input-color       : #7d7d7d;
+$pageSearch-head-input-height      : 55px;
+$pageSearch-head-input-width       : 400px;
+$pageSearch-main-liitem-background : $bg-third;
+$pageSearch-main-liitem-text-color : $text-third;
+
+
+
+// flag 
+//
+// 
+
+
+$AutocompleteCountry-dropdown-bg: $bg-twe;
+$AutocompleteCountry-dropdown-color: $bg-twe;
+$AutocompleteCountry-dropdown-list-selected-bg: $bg-selected-list-country;
+$AutocompleteCountry-dropdown-list-focus-bg: $bg-focus-list-country;
+$enable-dark-mode: false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

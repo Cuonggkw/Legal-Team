@@ -1,0 +1,863 @@
+.nl-card{
+	display: flex;
+	position: relative;
+	margin-bottom: 48px;
+	flex-direction: column;
+	overflow: hidden;
+
+	.nl-card__img{
+		overflow: hidden;
+	    position: relative;
+	    @include border-radius($card-image-borderRadius);
+
+	    a{
+	    	display: block;
+	    	line-height: 0;
+	    	position: relative;
+	    	padding-top: 56.25%;
+
+	    	img{
+	    		width: 100%;
+	    		height: 100%;
+	    		position: absolute;
+	    		left: 0;
+	    		top: 0;
+	    		object-fit: cover;
+	    	}
+	    }
+	}
+
+	&.horizontal{
+		flex-direction: row;
+
+		.nl-card__img{
+			flex: 0 0 170px;
+			max-width: 170px;
+		    margin-right: 15px;
+		    
+
+		    @include media-breakpoint-down(md){
+		    	flex: 0 0 140px;
+				max-width: 140px;
+		    }
+
+		    img{
+		    	@include border-radius($card-image-borderRadius);
+		    }
+		}
+	}
+
+	.nl-card__body{
+		padding-top: 10px;
+		flex: 1;
+		background-color: $card-body-background;
+
+		@include media-breakpoint-down(md){
+			padding-top: 10px;
+		}
+
+		.date{
+			color: $card-date-color;
+			font-size: $card-date-font-size;
+			margin-bottom: $card-date-margin-bottom;
+		}
+
+		h4{
+			font-size: $card-title-font-size;
+			margin-bottom: 7px;
+			line-height: 1.4;
+
+			@include media-breakpoint-down(md){
+				font-size: $card-title-font-size-MB;
+				height: 40px;
+			}
+
+			a{
+				color: $card-title-color;
+				display: -webkit-box;
+			    -webkit-box-orient: vertical;
+			    -webkit-line-clamp: 2;
+			    overflow: hidden;
+
+				&:hover{
+					color: $primary;
+				}
+			}
+		}
+
+		.time{
+			font-size: $card-time-font-size;
+			font-weight: 600;
+			color: $card-time-color;
+			span:not(.MuiSkeleton-root){
+				color: $txt-secondary !important;
+				font-weight: 600;
+				margin-left: 15px;
+				padding-left: 15px;
+				position: relative;
+				display: inline-block;
+
+				&::before{
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					width: 4px;
+					height: 4px;
+					background-color: $card-programme-dot;
+					@include translate(0,-50%);
+					@include border-radius(50%);
+				}
+			}
+
+			a{
+				&:hover{
+					color: $card-programme-color-hover;
+				}
+			}
+		}
+
+		.category{
+			height: 18px;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 18px;
+			text-transform: uppercase;
+			color: #5F6368;
+			flex: none;
+			order: 1;
+			flex-grow: 0;
+		}
+		.casting-time{
+			height: 18px;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 18px;
+			color: $text-primary;
+			flex: none;
+			order: 1;
+			flex-grow: 0;
+			span{
+				color: #5F6368;
+			}
+		}
+
+		.review{
+			height: 18px;
+			font-style: normal;
+			font-weight: 600;
+			font-size: $card-title-font-size-MB;
+			line-height: 18px;
+			color: $text-six;
+			.detail{
+				cursor: pointer;
+				text-decoration: underline;
+				&:hover{
+						color: $primary;
+					}
+			}
+			.cancel{
+				cursor: pointer;
+				text-decoration: underline;
+				&:hover{
+						color: $primary;
+				}
+			}
+		}
+
+		.programme{
+			color: $card-programme-color;
+			font-size: $card-programme-font-size;
+			font-weight: 600;
+			@include transition(all .2s linear);
+
+			@include media-breakpoint-between(md, xxl) { 
+				font-size: 1.2rem;
+			}
+
+			@include media-breakpoint-down(sm) { 
+				font-size: 1.2rem;
+			}
+
+			i{
+				margin-right: 10px;
+			}
+
+			span:not(.MuiSkeleton-root){
+				color: $txt-secondary !important;
+				font-weight: 600;
+				margin-left: 15px;
+				padding-left: 15px;
+				position: relative;
+				display: inline-block;
+
+				@include media-breakpoint-between(md, xxl) { 
+					margin-left: 10px;
+					padding-left: 10px;
+				}
+
+				&::before{
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					width: 4px;
+					height: 4px;
+					background-color: $card-programme-dot;
+					@include translate(0,-50%);
+					@include border-radius(50%);
+				}
+
+				@include media-breakpoint-down(md){
+					width: 100%;
+					margin-left: 6px;
+					padding-left: 18px;
+					font-size: 1.2rem;
+				}
+			}
+
+			a{
+				&:hover{
+					color: $card-programme-color-hover;
+				}
+			}
+		}
+
+		.views{
+
+			span{
+				position: relative;
+				display: inline-block;
+				margin-left: 0;
+				padding-left: 0;
+				color: $text-eight !important;
+				font-size: 1.2rem;
+
+				&:first-child{
+
+					&::after{
+						content: "•";
+						margin: 0 4px;
+					}
+				}
+			}
+		}
+
+		.process{
+			height: $card-process-height;
+			width: 100%;
+			margin-top: 10px;
+			background-color: $card-process-background;
+			position: relative;
+			overflow: hidden;
+			@include border-radius(5px);
+
+			div{
+				position: absolute;
+				height: 100%;
+				left: 0;
+				background-color: $primary;
+			}
+
+			&.hasSke{
+				background-color: transparent;
+
+				.MuiSkeleton-text{
+					@include scale(1);
+				}
+			}
+		}
+
+		.MuiSkeleton-root{
+			margin-top: -3px;
+		}
+	}
+
+	// &:hover{
+
+	// 	h4{
+
+	// 		a{
+	// 			color: $primary;
+	// 		}
+	// 	}
+	// }
+
+	&.bg{
+	
+		.nl-card__img{
+			position: relative;
+			&:hover{
+				.btn-submit{
+					display: block !important;
+					opacity: 1;
+				}
+			}
+			@include border-radius($card-image-borderRadius);
+			.btn-submit{
+				position: absolute;
+				height: 44px;
+				left: 16px;
+				bottom: 16px;
+				right: 16px;
+				border-radius: 8px;
+				display: none !important;
+				opacity: 0;
+				transition: transition(all 1.2s linear);
+
+				&.disabled{
+					background: #2E3134 !important;
+					border-color: #2E3134 !important;
+				}
+			}
+		}
+
+		.nl-card__body{
+			padding: 0px;
+			margin-top: 15px;
+			a{
+				width: 384px;
+				height: 30px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 20px;
+				line-height: 30px;
+				color: $text-primary;
+				flex: none;
+				order: 0;
+				flex-grow: 0;
+			}
+		}
+	}
+
+	&.gray{
+
+		.nl-card__body{
+			//background-color: $card-body-bg;
+		}
+	}
+}
+.cardC{
+    box-shadow: unset !important;
+    width: 80%;
+    margin: auto;
+    background: transparent;
+    @media screen and (max-width: 1702px) {
+        width: 79%;
+    }
+	.card-title{
+		h3{
+			color: $videoDetail-title-comment-color;
+			font-size: $videoDetail-title-comment-fontSize;
+	
+			@include media-breakpoint-down(md){
+				font-size: 1.6rem;
+			}
+		}
+		
+	}
+}
+.cardMain{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-gap: 0 32px;
+    // @media screen and (max-width: 1466px) {
+    //     grid-template-columns: auto;
+    //     text-align: center;
+    // }
+}
+.cardLeft{
+    margin: auto;
+    img{
+        border-radius: 8px;
+    }
+}
+.cardRight{
+    // width: 603px;
+    i{
+        cursor: pointer;
+    }
+ span{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 8px;
+    /* identical to box height, or 133% */
+    
+    
+    /* GreyS1 / Grey 1 */
+    
+    color: #949494;
+ }
+ p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height, or 133% */
+    
+    
+    /* Gray/900 */
+    
+    color: #101828;
+ }
+}
+.cardFlex{
+    display: grid;
+    gap:2vh;
+    justify-content: space-between;
+    border-radius: 8px;
+    // padding: 32px;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 1466px) {
+        grid-template-columns: 1fr;
+        grid-gap: 16px 16px;
+    }
+    @media screen and (max-width: 1282px) {
+        grid-template-columns: 0.5fr 1fr;
+        grid-gap: 16px 16px;
+    }
+}
+.cardInfoD{
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 16px;
+	margin-top: 8px;
+	padding-bottom: 20px;
+	// @media screen and (max-width: 1461px){
+	// 	grid-template-columns: auto auto;
+	// }
+
+}
+.cardFromTo{
+	display: flex;
+	gap: 0 8px;
+	align-items: center;
+	flex-wrap: wrap;
+	span{
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 19px;
+		/* identical to box height, or 133% */
+		
+		
+		/* GreyS1 / Grey 1 */
+		
+		color: #949494;
+	}
+	p{
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 21px;
+		/* identical to box height, or 133% */
+		
+		
+		/* Gray/900 */
+		
+		color: #101828;
+	}
+}
+.cardCard{
+	background: $bg-cardEvent;
+	padding: 16px;
+    width: 100%;
+    cursor: pointer; 
+	.url{
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap; 
+        width: 300px;
+    }
+    .url:hover{
+        cursor: pointer;
+    }
+}
+.cardCard[data-type^="detail"]{
+    cursor: auto;
+    margin-bottom: 16px;
+}
+.cardCard[module^="polls"]{
+    cursor: auto;
+}
+.cardForm{
+	display: flex;
+	gap: 0 8px;
+}
+.cardTo{
+	display: flex;
+	gap: 0 8px;
+}
+.cardCount{        
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	/* identical to box height, or 133% */
+
+
+	/* GreyS1 / Grey 1 */
+
+	color: #949494;
+}
+.cardCountItem{
+	display: flex;
+	margin-top: 8px;
+	gap: 0 8px;
+	p{
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 21px;
+		/* identical to box height, or 133% */
+		
+		
+		/* Gray/900 */
+		
+		color: #101828;
+	}
+}
+.cardFooter{    
+	clear: left;    
+	display: flex;
+	justify-content: space-between;
+}
+.sl-comment{
+	margin-top: 20px;
+
+	h3{
+		color: $videoDetail-title-comment-color;
+		font-size: $videoDetail-title-comment-fontSize;
+
+		@include media-breakpoint-down(md){
+			font-size: 1.6rem;
+		}
+	}
+
+	.sl-comment__inner{
+		margin-top: 17px;
+		background-color: #FFFFFF;
+		padding: 10px;
+		.author-thumbnail{
+			flex: 0 0 #{$videoDetail-avatar-size};
+			max-width: #{$videoDetail-avatar-size};
+			margin-right: 15px;
+
+			@include media-breakpoint-down(md){
+				flex: 0 0 40px;
+				max-width: 40px;
+			}
+
+			.avatar{
+				width: $videoDetail-avatar-size;
+				height: $videoDetail-avatar-size;
+				overflow: hidden;
+				@include border-radius(50%);
+
+				@include media-breakpoint-down(md){
+					width: 40px;
+					height: 40px;
+				}
+
+				.author-thumbnail-ava{
+					width: 100%;
+					height: 100%;
+					border: 2px solid $text-secondary;
+					display: flex;
+					justify-content: center;
+					overflow: hidden;
+					align-items: flex-end;
+					@include border-radius(50%);
+
+					@include media-breakpoint-down(md){
+						width: 39px;
+						height: 39px;
+					}
+
+					i{
+						font-size: 2.8rem;
+						color: $text-secondary;
+						@include translate(0,2px);
+
+						@include media-breakpoint-down(md){
+							font-size: 2.8rem;
+						}
+					}
+				}
+
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				&.author-thumbnail__no{
+					color: $txt-secondary;
+					background-color: $videoDetail-comment-textarea-bg;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-weight: 700;
+					font-size: 1.6rem;
+				}
+			}
+
+			&.author-thumbnail__top{
+				flex: 0 0 39px;
+				height: 39px;
+				margin-left: 8px;
+				margin-right: 18px;
+
+				@include media-breakpoint-down(md){
+					margin-left: 0;
+					margin-right: 15px;
+				}
+
+				.avatar{
+					width: 100%;
+					height: 100%;
+
+				}
+			}
+		}
+
+		.simple-box{
+			display: flex;
+			align-items: center;
+
+			.author-content{
+				flex: 1;
+				position: relative;
+
+				@include media-breakpoint-down(md){
+					padding-top: 4px;
+				}
+
+				.form-control{
+					position: relative;
+					height: auto;
+					padding: 0;
+
+					.MuiFormControl-root{
+						width: 100%;
+
+						textarea{
+							background-color: white;
+							border: 0;
+							color: $txt-secondary;
+							padding: 9px 60px 9px 20px;
+							font-size: 1.6rem;
+							@include opacity(1);
+							@include border-radius(8px);
+
+							@include media-breakpoint-down(md){
+								font-size: 1.4rem;
+							}
+						}
+
+
+						textarea::-webkit-input-placeholder {
+						  color: $txt-secondary;
+						  @include opacity(1);
+						}
+
+						textarea:-moz-placeholder { /* Firefox 18- */
+						  color: $txt-secondary;
+						  @include opacity(1);
+						}
+
+						textarea::-moz-placeholder {  /* Firefox 19+ */
+						  color: $txt-secondary;
+						  @include opacity(1);
+						}
+
+						textarea:-ms-input-placeholder {
+						  color: $txt-secondary;
+						  @include opacity(1);
+						}
+
+						textarea::placeholder {
+						  color: $txt-secondary;
+						  @include opacity(1);
+						}
+					}
+
+					.sent-comment{
+						position: absolute;
+						top: -3px;
+						right: 5px;
+						color: black;
+
+						i{
+							font-size: 2rem;
+						}
+
+						@include media-breakpoint-down(md){
+							top: 0;
+
+							i{
+								font-size: 1.6rem;
+							}
+						}
+					}
+				}
+			}
+		}		
+
+		.comment-list__item{
+			display: flex;
+			margin-top: 20px;
+
+			.text{
+				flex: 1;
+
+				.name{
+					font-weight: 700;
+					// color: $videoDetail-comment-name-color;
+					font-size: $videoDetail-comment-name-fontSize;
+					margin-bottom: 3px;
+					text-transform: capitalize;
+
+					@include media-breakpoint-down(md){
+						font-size: 1.4rem;
+					}
+				}
+
+				.text-inner{
+					color: red;
+					margin-bottom: 7px;
+
+					p{
+						margin-bottom: 10px;
+
+						&:last-child{
+							margin-bottom: 0;
+						}
+
+						@include media-breakpoint-down(md){
+							font-size: 1.4rem;
+						}
+					}
+
+					.MuiFormControl-root{
+						width: 100%;
+						.MuiFilledInput-underline:before{
+							border-bottom: 1px solid $MuiFilledInput-border-bottom;
+						}
+
+						.Mui-disabled.MuiFilledInput-underline:before{
+							border-bottom: 0;
+						}
+
+						.MuiFilledInput-root{
+							background-color: transparent;
+						}
+
+						textarea{
+							color: red;
+							padding: 7px 0;
+							@include opacity(1);
+						}
+					}
+				}
+
+				.time{
+					font-size: 1.1rem;
+					color: $text-eight;
+
+					a{
+						color: $primary;
+
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+
+				.editComment-buttons{
+					display: flex;
+					justify-content: flex-end;
+
+					.MuiButtonBase-root{
+						background-color: $videoDetail-comment-textarea-bg;
+						color: $txt-secondary;
+						height: 33px;
+						padding: 3px 16px 1px;
+						margin-left: 5px;
+
+						span{
+							font-size: 1.4rem;
+							font-weight: 700;
+						}
+
+						&.btn-cancel{
+							background-color: transparent;
+
+							&:hover{
+								color: $primary;
+							}
+						}
+
+						&.btn-save{
+
+							&:hover{
+								background-color: $primary;
+								color: #fff;
+							}
+						}
+					}
+				}
+			}	
+
+			.action-menu{
+				flex: 0 0 40px;
+				max-width: 40px;
+				text-align: right;
+				visibility: hidden !important;
+				@include opacity(0);
+				@include transition(all .2s linear);
+
+				@include media-breakpoint-down(md){
+					display: none;
+				}
+
+				&:hover{
+					visibility: inherit;
+					@include opacity(1);
+				}
+
+				.MuiIconButton-colorPrimary{
+					color: $txt-secondary;
+
+					i{
+						font-size: 3rem;
+					}
+
+					&:hover{
+						color: $primary;
+					}
+				}
+			}	
+
+			&:hover{
+
+				.action-menu{
+					visibility: inherit;
+					@include opacity(1);
+				}
+			}		
+		}	
+	}
+}

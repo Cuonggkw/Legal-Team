@@ -1,0 +1,255 @@
+#guide-search{
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	.guide-search__inner{
+		visibility: hidden;
+		position: relative;
+		right: -13px;
+		@include opacity(0);
+		@include transition(all .2s linear);
+
+		form{
+			position: relative;
+
+			input[type="text"]{
+				background-color: #f0f0f0;
+				border: 1px solid #d4d4d4;
+				height: 40px;
+				width: 325px;
+				max-width: 100%;
+				padding: 0 50px 0 20px;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				@include border-radius(20px);
+			}
+
+			input[type="submit"]{
+				position: absolute;
+				right: 6px;
+				top: 50%;
+				width: 38px;
+				height: 38px;
+				background-color: transparent;
+				z-index: 5;
+				@include opacity(0);
+				@include translate(0,-50%);
+			}
+
+			.ic-search{
+				position: absolute;
+				right: 13px;
+				top: 50%;
+				font-size: 24px;
+				font-size: $header-icon-size;
+				@include translate(0,-50%);
+				
+
+				i{
+					color: $txt-secondary !important;
+				}
+			}
+		}
+	}
+
+	>.ic-search{
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		@include translate(0,-50%);
+
+		i{
+			font-size: $header-icon-size;
+			color: $header-text-color;
+		}
+	}
+
+	.guide-search__Autocomplete{
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		overflow: hidden;
+		border: 1px solid rgba(138, 153, 191, 0.125);
+		background: $dropdownProfile-background;
+		font-size: $searchAtc-font-size;
+		margin-top: $searchAtc-marginTop;
+		@include border-radius(6px);
+		@include box-shadow($dropdown-box-shadow);
+		@include transition(all .2s linear);
+
+		.nl-scroll{
+
+			ul.list-result{
+
+				li{
+
+					a{
+						display: block;
+						padding: $searchAtc-resulte-padding;
+						color: $searchAtc-link-color;
+						display: -webkit-box;
+					    -webkit-box-orient: vertical;
+					    -webkit-line-clamp: 1;
+					    overflow: hidden;
+					    line-height: 26px;
+
+						&:hover{
+							background-color: rgba($primary,.1);
+						}
+
+						@include media-breakpoint-down(lg){
+							padding: 0 15px;
+						}
+					}
+				}
+			}
+
+			.resulte-inner{
+				
+			}
+
+			.suggestedKeywords{
+				
+				.suggestedKeywords-head{
+					padding: 20px;
+
+					ul{
+
+						li{
+							display: inline-block;
+							margin-right: 10px;
+							margin-bottom: 10px;
+
+							a{
+								display: block;
+								color: $searchAtc-suggess-link-color;
+								background-color: $searchAtc-suggess-link-bg;
+								padding: 5px 15px 3px;
+								@include border-radius(8px);
+
+								&:hover{
+									background-color: $primary;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+
+				.suggestedKeywords-middle{
+
+					.title-searchResult{
+						padding: 0 20px;
+						font-size: 12px;
+						color: $txt-secondary;
+						position: relative;
+						top: -5px;		
+
+						@include media-breakpoint-down(lg){
+							padding: 0 15px;
+						}				
+					}
+				}
+			}
+		}
+	}
+
+	&.onSearch{
+
+		.guide-search__inner{
+			visibility: inherit;
+			@include opacity(1);
+		}
+	}
+
+	@include media-breakpoint-down(lg){
+		margin-left: auto;
+
+		.guide-search__inner{
+			height: 40px;
+		}
+	}
+}
+
+@include media-breakpoint-down(lg){
+	#guide-search{
+		
+		.guide-search__inner{
+			width: 100vw;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			z-index: -1;
+			right: 0;
+			background-color: $mBGuide-search;
+			overflow-y: auto;
+
+			form{
+
+				.ic-search{	
+					position: relative;
+					top: 0;
+					right: 0;
+					margin-left: 10px;
+					@include translate(0,0);
+
+					i{
+						color: #fff !important;
+					}
+				}
+
+				input[type=text]{
+					width: auto;
+					flex: 1;
+				}
+
+				input[type=submit]{
+					right: 8px;
+				}
+
+				button[type="reset"]{
+					background-color: transparent;
+					position: absolute;
+					top: 50%;
+					right: 55px;
+					width: 25px;
+					height: 25px;
+					border: 0;
+					@include translate(0,-50%);
+				}
+			}
+
+			.guide-search__Autocomplete{
+				position: relative;
+				top: 0;
+				background: inherit;
+				margin-top: 0;
+				border: 0;
+				@include box-shadow(inherit);
+
+				.suggestedKeywords-head{
+					padding: 20px 15px !important;
+				}
+
+				.resulte-inner{
+					padding-top: 20px;
+				}
+			}
+		}
+
+		&.onSearch{
+			
+			.guide-search__inner{
+				z-index: 1500;
+			}
+
+			> .ic-search{
+				display: none;
+			}
+		}		
+	}
+}

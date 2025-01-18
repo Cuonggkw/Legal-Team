@@ -1,0 +1,101 @@
+.nl-404{
+	padding-top: 50px;
+	text-align: center;
+	padding-bottom: 50px;
+
+	h4{
+		position: relative;
+		font-size: 6rem;
+		color: $text-primary;
+
+		@include media-breakpoint-down(md){
+			font-size: 4rem;
+		}
+
+		span{
+			position: relative;
+
+			&::before{
+				content: '';
+				position: absolute;
+				left: -30px;
+				top: 50%;
+				width: 10px;
+				height: 10px;
+				background-color: $text-primary;
+				@include translate(0,-50%);
+				@include border-radius(50%);
+			}
+
+			&::after{
+				content: '';
+				position: absolute;
+				right: -30px;
+				top: 50%;
+				width: 10px;
+				height: 10px;
+				background-color: $text-primary;
+				@include translate(0,-50%);
+				@include border-radius(50%);
+			}
+		}
+	}
+
+	h2{
+		font-size: 18rem;
+		color: $primary;
+		border-bottom: 3px solid $text-primary;
+		display: inline-block;
+
+		@include media-breakpoint-down(md){
+			font-size: 13rem;
+			width: 100%;
+		}
+
+		i{
+			font-size: 16rem;
+
+			@include media-breakpoint-down(md){
+				font-size: 12rem;
+			}
+		}
+	}
+
+	p{
+		font-size: 3rem;
+		color: $text-primary;
+		margin-top: 24px;
+    	letter-spacing: 5px;
+
+    	@include media-breakpoint-down(md){
+			font-size: 2.5rem;
+		}
+	}
+
+	.backToHome{
+		margin-top: 15px;
+
+		a{
+
+			button{
+				height: 55px;
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: #fff;
+				background-color: $primary;
+				text-transform: inherit;
+				padding: 0 30px;
+				@include border-radius(100px);
+
+				.MuiButton-label{
+					font-size: 2rem;
+
+					i{
+						font-size: 2.5rem;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+#tt-root{
+	background-color: getColor(web-wash);
+}
+
+#tt-main{
+	padding-left: $adAside-width;
+	@include transition(all 0.2s linear);
+}
+
+.aside-miniminze #tt-main{
+	padding-left: $adAside-width-minimize;
+}

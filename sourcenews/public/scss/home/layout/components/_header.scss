@@ -1,0 +1,262 @@
+@import 
+	'../../../core/components/dropdown';
+
+#nl-header{
+	width: 100%;
+	max-width: 100%;
+	background-color: transparent;
+	@include box-shadow(inherit);
+	position: relative;
+
+	.MuiToolbar-root{
+		width: 100%;
+		flex: 0 0 100%;
+		min-height: auto;
+	}
+
+		#nl-header__mastehead{
+			min-height: auto;
+			position: relative;
+			width: 100%;
+			flex: 0 0 100%;
+			overflow: hidden;
+			.d-flex{
+				height: 65px;
+				align-items: center;
+				// background-color: bisque;
+				// margin-top: 40px;
+				justify-content: center;
+
+				#guide-menu{
+					display: flex;
+					max-width: 100%;
+					align-items: center;
+					gap: 48px;
+
+					@media screen and (min-width: 992px) {
+						gap: 35px;
+					}
+
+					.right{
+						display: flex;
+						gap: 4px;
+
+						@media screen and (min-width: 992px) {
+							gap: 10px;
+						}
+
+						.flags{
+							width: 100px;
+							display: flex;
+							gap: 8px;
+							align-items: center;
+							cursor: pointer;
+
+							.flags__icon{
+								.flags__icon-vi img{
+									width: 20px;
+									height: 20px;
+								}
+							}
+
+							.flags__icon-header{
+								// font-family: "Inter";
+								font-size: 14px;
+								line-height: 20px;
+								font-weight: 500;
+							}
+						}
+
+						.nl-button{
+							width: 160px;
+							height: 55px;
+							border: 1px solid #E0E0E0;
+							padding: 20px 20px;
+							border-radius: 62px;
+							background-color: #fff !important;
+
+							p{
+								font-family: "Open+Sans", sans-serif;
+								font-weight: 600;
+								font-size: 14px;
+								color: #2F2F2F;
+							}	
+						}
+					}
+				}
+
+				ul {
+					@media screen and (min-width: 992px) {
+						gap: 30px;
+					}
+				}
+
+				.logo{
+					// margin-top: 40px;
+					width: 154px;
+					height: 60px;
+
+					@media screen and (min-width: 992px) {
+						width: 120px;
+						height: 50px;
+					}
+
+					img{
+						width: 154px;
+						height: 60px;
+
+						@media screen and (min-width: 992px) {
+							width: 120px;
+							height: 50px;
+						}
+					}
+				}
+			}
+
+			.nation{
+				position: fixed;
+				right: 584px;
+				top: 90px;
+				max-width: 130px;
+				height: 88px;
+				border: 1px solid #F3F4F6;
+				border-radius: 8px;
+				background-color: #FFFFFF;
+
+				@media screen and (min-width: 992px) {
+					right: 210px;
+					top: 95px;
+				}
+
+				.nation-vi {
+					.nation-vi-icon{
+						width: 130px;
+						height: 44px;
+						display: flex;
+						gap: 8px;
+						align-items: center;
+						justify-content: center;
+					}
+
+					.nation-vi-flag img {
+						width: 20px;
+						height: 20px;
+					}
+
+					.nation-vi-header{
+						font-size: 14px;
+					}
+				}
+				.nation-en {
+					.nation-en-icon{
+						width: 130px;
+						height: 44px;
+						display: flex;
+						gap: 8px;
+						align-items: center;
+						justify-content: center;
+					}
+
+					.nation-en-flag img {
+						width: 20px;
+						height: 20px;
+					}
+
+					.nation-en-header{
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	
+
+	@include media-breakpoint-only(lg){
+		#nl-header__mastehead{
+			padding: 0 30px;
+		}
+		
+	}
+
+	@include media-breakpoint-down(lg){
+
+		#nl-header__mastehead{
+			height: $header-height-mb;
+			padding: 0 30px;
+			width: 100%;
+			flex: 0 0 100%;
+
+			.d-flex{
+				height: 100%;
+				align-items: center;
+
+				.logo{
+					margin-right: 50px;
+
+					img{
+						max-height: 27px;
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm){
+		#nl-header__mastehead{
+			padding: 0 15px;
+
+			.logo{
+				margin-right: 0;
+			}
+		}
+	}
+
+	#nl-header__mastehead{
+		background-color: #fff;
+		transition:background-color .4s;
+		
+		@include box-shadow($header-shadow);
+
+		@include media-breakpoint-up(md){
+			&.transparent{
+				// background-color: bisque;
+				margin-top: 40px;
+				box-shadow: inherit;
+				// margin-top: 40px;
+				-webkit-box-shadow: inherit;
+				-moz-box-shadow: inherit;
+				background-color: #FFFFFF;
+				transition:background-color .4s;
+			}
+
+			&.non-transparent-header {
+				position: fixed;
+				top: 0;
+			}
+
+			#guide-nav nav ul li a{
+				// font-family: "Mulish";
+				color: #140000;
+				font-weight: 600;
+				font-size: 20px;
+				text-align: center;
+				line-height: 42.56px;
+				// text-transform: uppercase;
+				&.active{
+					color: #CC9834;
+				}
+				&:hover{
+					color: #CC9834;
+				}
+			}
+
+			#guide-search > .ic-search i{
+				color: #fff;
+			}
+
+			#guide-user .guide-user__login--no i{
+				color: #fff;
+			}
+		}
+	}
+}

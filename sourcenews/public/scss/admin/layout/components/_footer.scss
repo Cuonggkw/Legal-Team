@@ -1,0 +1,10 @@
+#tt-footer{
+	background-color: getColor(surface-background);
+	padding: 20px 0;
+	@include transition(all 0.2s linear);
+
+	.tt-footer__copyright{
+		font-size: 1.3rem;
+		color: getColor(primary-text);
+	}
+}

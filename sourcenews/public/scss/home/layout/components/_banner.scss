@@ -1,0 +1,427 @@
+.nl-banner{
+	margin-top: 20px;
+
+	@include media-breakpoint-down(md){
+		margin-top: 0;	
+	}
+
+	.nl-banner__inner{
+
+		.swiper{
+			position: relative;
+
+			@include media-breakpoint-down(md){
+				padding-bottom: 35px;
+			}
+
+			.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after{
+				font-family: "Font Awesome 5 Pro";
+    			font-weight: 900;
+				content: "\f053";
+				color: $primary;
+				font-size: 3.5rem;
+			}
+
+			.swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after{
+				font-family: "Font Awesome 5 Pro";
+    			font-weight: 900;
+				content: "\f054";
+				color: $primary;
+				font-size: 3.5rem;
+			}
+
+			.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+				pointer-events: inherit;
+			}
+
+			.swiper-button-prev{
+				left: calc((100vw - 25px - #{$container-max-width}) / 2 );
+				justify-content: flex-start;
+				@include translate(-15px,0);
+
+				@media (min-width: 320px) and (max-width: 1919px){
+					left: 15px;
+					@include translate(0,0);
+				}
+
+				@include media-breakpoint-down(xl){
+					left: 5px;
+					@include translate(0,-25px);
+				}
+
+				@include media-breakpoint-down(md){
+					display: none;
+				}
+			}
+
+			.swiper-button-next{
+				right: calc((100vw - 25px - #{$container-max-width}) / 2 );
+				justify-content: flex-end;
+				@include translate(15px,0);
+
+				@media (min-width: 320px) and (max-width: 1919px){
+					right: 15px;
+					@include translate(0,0);
+				}
+
+				@include media-breakpoint-down(xl){
+					right: 5px;
+					@include translate(0,-25px);
+				}
+
+				@include media-breakpoint-down(md){
+					display: none;
+				}
+			}
+
+			.swiper-pagination{
+				left: 50%;
+				bottom: 25%;
+				width: calc(#{$container-max-width} * 0.5);
+				text-align: right;
+
+				@media (min-width: 320px) and (max-width: 1919px){
+					width: inherit;
+					left: inherit;
+					right: 50px;
+				}
+
+				@include media-breakpoint-down(lg){
+					width: 100%;
+					left: inherit;
+					right: 0;
+					text-align: center;
+					bottom: 0;
+				}
+
+				.swiper-pagination-bullet{
+					background-color: #fff;
+					width: 10px;
+					height: 10px;
+					@include opacity(1);
+
+					@include media-breakpoint-down(lg){
+						background-color: $slSection-header-more-color;
+					}
+
+					&-active{
+						background-color: $primary;
+					}
+				}
+			}
+
+					.nl-banner__image{
+						position: relative;
+
+						@media screen and (min-width: 992px) {
+							margin: 0 20px;
+						}
+
+						.content-fluid {
+							position: absolute;
+							width: 864px;
+							height: 263px;
+							left: 21%;
+							bottom: 0px;
+							top: 100px;
+							display: flex;
+							flex-direction: column;
+							gap: 24px;
+							align-items: center;
+
+							@media screen and (min-width: 992px) {
+								left: 15%;
+								top: 70px;
+								gap: 20px;
+							}
+
+							.des-fluid {
+								font-style: normal;
+								font-weight: 700;
+								font-size: 48px;
+								line-height: 58px;
+								text-align: center;
+								letter-spacing: -0.01em;
+								background: linear-gradient(90deg, #CC9834, #FDE171, #CC9834);
+								-webkit-background-clip: text; /* Áp dụng gradient chỉ cho phần chữ */
+								-webkit-text-fill-color: transparent;	
+							
+							@include media-breakpoint-down(xl){
+								padding-top: 56.25%;
+							}
+	
+							a{
+								display: block;
+							}
+	
+							&::after{
+								position: absolute;
+								content: '';
+								left: 0;
+								bottom: 0;
+								width: 100%;
+								height: 34%;
+								z-index: 5;
+								//background: $banner-gradiant;
+	
+								@include media-breakpoint-down(lg){
+									height: 30px;
+								}
+							}
+	
+							img{
+								
+								@include media-breakpoint-up(xl){
+									object-fit: cover;
+								}
+	
+								@include media-breakpoint-down(xl){
+									position: absolute;
+									left: 0;
+									top: 0;
+									object-fit: cover;
+									width: 100%;
+									height: 100%;
+								}
+							}
+	
+								@media (max-width: 1024px){
+									width: 100%;
+									left: 0%;
+									font-size: 1.5em;
+									line-height: 1.25em;
+									height: 2.5em;
+								}
+	
+								@media (max-width: 426px){
+									width: 80%;
+									left: 0;
+									font-size: 1em;
+									line-height: 1.25em;
+									height: 3.5em;
+									padding-left: 10%;
+									text-shadow: 1px 1px 4px #000;
+								}
+							}
+
+							.title-fluid{
+								font-family: "Mulish";
+								font-weight: 400;
+								font-size: 24px;
+								text-align: center;
+								line-height: 36.12px;
+								color: #FCFCFD;
+							}
+
+							.btn-fluid {
+								width: 212px;
+								height: 80px;
+								border-radius: 50px;
+								padding: 26px 52px;
+								background-color: #F6CB57;
+								cursor: pointer;
+
+								p {
+									font-family: "Mulish";
+									font-size: 20px;
+									font-weight: 600;
+								}
+							}
+						}
+
+						.page-fluid{
+							position: absolute;
+							width: 91px;
+							height: 12px;
+							top: 440px;
+							left: 48%;
+							bottom: 0px;
+							display: flex;
+							gap: 8px;
+
+							@media screen and (min-width: 992px) {
+								left: 48%;
+								top: 370px;
+							}
+
+							.page-1 {
+								width: 31px;
+								height: 12px;
+								border-radius: 6px;
+								background-color: #F6CB57;
+								cursor: pointer;
+								transition: all 0.3s;
+							}
+
+							.page-2 {
+								width: 12px;
+								height: 12px;
+								background-color: #FCFCFD;
+								border-radius: 6px;
+								cursor: pointer;
+							}
+						}
+					}
+
+					.shadow {
+						.shadow-1 {
+							background-color: #FFB200;
+							width: 881px;
+							height: 76px;
+							opacity: 50%;
+							backdrop-filter: blur(200px);
+						}
+					}
+					
+
+					.nl-banner__image{
+
+						&.default{
+
+							&::after{
+
+								@include media-breakpoint-up(lg){
+									height: 0;
+								}
+							}
+						}
+					}
+
+					.nl-banner__ctn{
+						position: absolute;
+						width: 100%;
+						left: 0;
+						bottom: 24%;
+						z-index: 10;
+
+						@include media-breakpoint-down(lg){
+							position: relative;
+							bottom: 0;
+							margin-top: -25px;
+						}
+
+						.container{
+
+							.block{
+								width: 735px;
+
+								@include media-breakpoint-down(xl){
+									max-width: 60%;
+								}
+
+								@include media-breakpoint-down(md){
+									max-width: 100%;
+									text-align: center;
+								}
+
+								h4{
+									color: $text-primary;
+									font-size: 3.4rem;
+									// font-size: 6.4rem;
+									margin-bottom: 20px;
+									display: -webkit-box;
+								    -webkit-box-orient: vertical;
+								    -webkit-line-clamp: 2;
+								    overflow: hidden;
+								    transform-origin: left bottom;
+								    transform: scale(1) translate3d(0px, 0px, 0px);
+								    transition-duration: 1300ms;
+								    transition-delay: 5000ms;
+
+								    
+
+									@include media-breakpoint-down(xl){
+										font-size: 2.4rem;
+									}
+
+									@include media-breakpoint-down(md){
+										font-size: 2rem;
+									}
+								}
+
+								.info-wrapper{
+									color: $text-primary;
+									font-size: 1.6rem;
+									margin-bottom: 20px;
+									transform: translate3d(0px, 0px, 0px);
+								    transition-duration: 1300ms;
+								    transition-delay: 5000ms;
+								    opacity: 1;
+								}
+
+								&.scale{
+
+									h4{
+										transform-origin: left bottom;
+									    transform: scale(0.6) translate3d(0px, 120px, 0px);
+									    transition-duration: 1300ms;
+									    transition-delay: 5000ms;
+									}
+
+									.info-wrapper{
+										transform: translate3d(0px, 75px, 0px);
+									    transition-duration: 1300ms;
+									    opacity: 0;
+									}
+							    }
+
+								.programme{
+									color: $primary;
+									font-size: 1.4rem;
+									font-weight: 600;
+									padding: 15px 0;
+
+									i{
+										margin-right: 10px;
+									}
+								}
+
+								a{
+									display: inline-block;
+
+									button{
+										height: 55px;
+										font-size: 1.6rem;
+										font-weight: 700;
+										color: #fff;
+										background-color: $primary;
+										text-transform: inherit;
+										@include border-radius(100px);
+
+										@include media-breakpoint-down(xl){
+											height: 40px;
+										}
+
+										i{
+											font-size: 1.4rem;
+											margin-right: 10px;
+										}
+									}
+								}
+							}
+						}
+					}
+
+		}
+	}
+
+	&.only{
+		.swiper-button-prev,.swiper-button-next,.swiper-pagination{
+			display: none !important;
+		}
+	}
+}
+
+#nl-main .sl-section:nth-child(2){
+	position: relative;
+	z-index: 30;
+	margin-top: 0%;
+
+	@media (min-width: 1600px) and (max-width: 1900px){
+		margin-top: 0%;
+	}
+	
+	@include media-breakpoint-down(lg){
+		margin-top: 0;
+	}
+}

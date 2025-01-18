@@ -1,0 +1,31 @@
+@import 
+	'../../core/abstracts/functions',
+	'../../core/abstracts/variables',
+	'../../core/abstracts/mixins';
+
+$colors-dark:(
+	bgPageLogin: #18191a,
+	bgInput: #242526,
+	bgCheckbox: #242526,
+	textInput: #b0b3b8,
+	textHBa: #e4e6eb,
+	fillSvg: #b5b5c3,
+	filterLogo : 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)',
+	MuiIconButton-background-hover: rgba(#3a3b3c,.5),
+);
+
+@media (prefers-color-scheme: dark){
+	:root{
+		@each $name, $color in $colors-dark{
+			--color-#{$name}: #{$color}
+		}
+
+		--theme: 'dark'
+	}
+}
+
+.__tt-dark-mode{
+	@each $name, $color in $colors-dark{
+		--color-#{$name}: #{$color}
+	}
+}

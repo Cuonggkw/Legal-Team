@@ -1,0 +1,50 @@
+#guide-wrapper{
+	height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    position: absolute;
+    right: 25px;
+}
+
+#guide-nav{
+	// margin: auto;
+
+	nav{
+
+		ul{
+			display: flex;
+			gap: 40px;
+
+			li{
+				// margin: 35px;
+
+
+				a{
+					display: block;
+					position: relative;
+					// height: 65px;
+					line-height: 42.56px;
+					@include transition(all .2s linear);
+
+					&:hover,&.active{
+						color: $nav-link-color-active;
+
+						&::after{
+							content: '';
+							position: absolute;
+							left: 0;
+							top: 100%;
+							width: 100%;
+						}
+					}
+
+					&.active{
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}

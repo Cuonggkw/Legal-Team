@@ -1,0 +1,40 @@
+@import 
+	'core/abstracts/functions',
+	'core/abstracts/variables';
+
+$colors-dark:(
+	primary-text: $darkMode-gray-30,
+	secondary-text: $darkMode-gray-60,
+	dark-light: $darkMode-black,
+	web-wash: $darkMode-90,
+	surface-background: $darkMode-60,
+	primary-border: #3e4042,
+	input-background: $darkMode-60,
+	aside-background: $darkMode-100,
+	aside-brand-background: $darkMode-black,
+	bgInput: $darkMode-60,
+	bgCheckbox: $darkMode-60,
+	textInput: $darkMode-gray-60,
+	textHBa: $darkMode-gray-30,
+	fillSvg: #b5b5c3,
+	filterLogo : 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)',
+	MuiIconButton-background-hover: rgba(#3a3b3c,.5),
+);
+
+// @media (prefers-color-scheme: dark){
+// 	:root{
+// 		@each $name, $color in $colors-dark{
+// 			--color-#{$name}: #{$color}
+// 		}
+
+// 		--theme: 'dark'
+// 	}
+// }
+
+.__tt-dark-mode{
+	$primary   : $blue;
+	
+	@each $name, $color in $colors-dark{
+		--color-#{$name}: #{$color}
+	}
+}

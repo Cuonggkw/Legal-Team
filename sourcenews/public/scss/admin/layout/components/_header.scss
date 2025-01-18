@@ -1,0 +1,18 @@
+#tt-adminHeader{
+	
+	#tt-header{
+		padding-left: $adAside-width;
+		background-color: getColor(surface-background);
+		height: $adAsideBrand-height;
+		box-shadow: none;
+		@include transition(all 0.2s linear);
+
+		.MuiToolbar-root{
+			min-height: $adAsideBrand-height;
+		}
+	}
+}
+
+.aside-miniminze #tt-adminHeader #tt-header{
+	padding-left: $adAside-width-minimize;
+}

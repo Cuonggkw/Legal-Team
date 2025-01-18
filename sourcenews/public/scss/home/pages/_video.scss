@@ -1,0 +1,1305 @@
+.video-detail{
+	padding-top: 30px;
+	padding-bottom: 50px;
+
+	.video-detail__movieShow{
+
+		.container{
+			overflow: hidden;
+			position: relative;
+
+			&::before{
+				background-color: var(--color-bg-comment-textarea);
+				content: '';
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+
+				@media (min-width: 1200px) and (max-width: 1919px){
+					width: calc(100% - 100px);
+					left: 50%;
+					@include translate(-50%,0);
+				}
+			}
+
+			@include media-breakpoint-down(xl){
+				padding: 0;
+			}
+		}
+
+		.nl-player{
+			width: 1280px;
+			margin: 0 auto;
+			max-width: calc(100vh + 250px);
+			position: relative;
+
+			@media (min-width: 1200px) and (max-width: 1599px){
+				max-width: calc(100vh + 130px);
+			}
+
+			@include media-breakpoint-down(xl){
+				max-width: 100%;
+			}
+
+			.nl-player__video{
+				position: relative;
+				overflow: hidden;
+				// padding-top: 56.25%;
+
+				video, iframe,.dm-player.dm-show-player{
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+
+				.mask-noLogin{
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 5;
+				}
+			}
+		}
+	}
+
+	.video-detail__info{
+		margin-top: 15px;
+
+		.container{
+
+			.menu{
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				@include media-breakpoint-down(md){
+					flex-wrap: wrap;
+
+				}
+
+				.chanel-name{
+					position: relative;
+					color: $primary;
+					font-weight: 600;
+					font-size: 1.4rem;
+
+					i{
+						margin-right: 10px;
+					}
+
+					@include media-breakpoint-down(md){
+						order: 1;
+						margin-top: 10px;
+					}
+				}
+
+				.online{
+					height: 26px;
+					padding: 0 25px;
+					background-color: #EC0015;
+					@include border-radius(100px);
+					color: #fff;
+					font-weight: 700;
+					font-size: 1.4rem;
+					line-height: 26px;
+					margin-right: 20px;
+					position: relative;
+					z-index: 5;
+
+					@include media-breakpoint-down(md){
+						order: 1;
+					}
+				}
+
+				.menu-list{
+					font-size: 400px;
+					font-size: 1.6rem;
+					display: flex;
+					align-items: center;
+					margin-left: auto;
+					position: relative;	
+					z-index: 50;
+
+					@include media-breakpoint-down(md){
+						width: 100%;
+						justify-content: space-around;
+						margin-bottom: 5px;
+					}
+
+					.menu-list__item{
+						margin-left: 25px;
+						color: $txt-secondary;
+						cursor: pointer;
+						position: relative;
+						@include transition(all .2s linear);
+
+						&:first-child{
+							margin-left: 0;
+						}
+
+						&:last-child{
+							margin-left: 5px;
+							left: 10px;
+						}
+
+						.MuiIconButton-colorPrimary{
+							color: $txt-secondary;
+
+							i{
+								font-size: 3rem;
+							}
+
+							&:hover{
+								color: $primary;
+							}
+						}
+
+						> span{
+							margin-left: 8px;
+						}
+
+						&:hover, &.active{
+							color: $primary;
+						}
+
+						&.menu-list--love{
+
+							&:hover, &.active{
+								color: $primary;
+
+								i{
+									font-weight: 900;
+								}
+							}
+						}
+
+						@include media-breakpoint-down(md){
+							display: flex;
+							flex-direction: column;
+							text-emphasis: center;
+							align-item: center;
+							text-align: center;
+							flex: 1 1;
+
+							span{
+								width: 100%;
+								margin-top: 5px;
+								margin-left: 0;
+								font-size: 1.4rem;
+							}
+						}
+					}
+				}
+			}
+
+			.info{
+				margin-top: 25px;
+
+				@include media-breakpoint-down(md){
+					margin-top: 15px;
+				}
+
+				h1{
+					color: $videoDetail-title-color;
+					font-size: $videoDetail-title-fontSize;
+					margin-bottom: 15px;
+					margin-top: 15px;
+					padding-right: 50px;
+					position: relative;
+					z-index: 999;
+
+					@include media-breakpoint-down(lg){
+						padding-right: 0;
+					}
+
+					@include media-breakpoint-down(md){
+						font-size: 2.4rem;
+					}
+				}
+
+				.info-text{
+					font-weight: 600;
+					font-size: 1.4rem;
+					color: $txt-secondary;
+					display: flex;
+					margin-bottom: 15px;
+
+					.info-text__date{
+
+						.dot{
+							position: relative;
+
+							&::after{
+								content: "•";
+								margin: 0 8px;
+								font-size: 1.2rem;
+							}
+						}
+					}
+				}
+
+				.content{
+					padding-right: 50px;
+					font-size: $videoDetail-ctn-fontSize;
+					color: $videoDetail-ctn-color;
+
+					@include media-breakpoint-down(lg){
+						padding-right: 0;
+					}
+
+					p{
+						font-size: $videoDetail-ctn-fontSize;
+						color: $videoDetail-ctn-color;
+						margin-bottom: 10px;
+
+						@include media-breakpoint-down(md){
+							font-size: 1.4rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sl-comment{
+		margin-top: 20px;
+
+		h3{
+			color: $videoDetail-title-comment-color;
+			font-size: $videoDetail-title-comment-fontSize;
+
+			@include media-breakpoint-down(md){
+				font-size: 1.6rem;
+			}
+		}
+
+		.sl-comment__inner{
+			margin-top: 17px;
+
+			.author-thumbnail{
+				flex: 0 0 #{$videoDetail-avatar-size};
+				max-width: #{$videoDetail-avatar-size};
+				margin-right: 15px;
+
+				@include media-breakpoint-down(md){
+					flex: 0 0 40px;
+					max-width: 40px;
+				}
+
+				.avatar{
+					width: $videoDetail-avatar-size;
+					height: $videoDetail-avatar-size;
+					overflow: hidden;
+					@include border-radius(50%);
+
+					@include media-breakpoint-down(md){
+						width: 40px;
+						height: 40px;
+					}
+
+					.author-thumbnail-ava{
+						width: 100%;
+						height: 100%;
+						border: 2px solid $text-secondary;
+						display: flex;
+						justify-content: center;
+						overflow: hidden;
+						align-items: flex-end;
+						@include border-radius(50%);
+
+						@include media-breakpoint-down(md){
+							width: 39px;
+							height: 39px;
+						}
+
+						i{
+							font-size: 2.8rem;
+							color: $text-secondary;
+							@include translate(0,2px);
+
+							@include media-breakpoint-down(md){
+								font-size: 2.8rem;
+							}
+						}
+					}
+
+					img{
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					&.author-thumbnail__no{
+						color: $txt-secondary;
+						background-color: $videoDetail-comment-textarea-bg;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-weight: 700;
+						font-size: 1.6rem;
+					}
+				}
+
+				&.author-thumbnail__top{
+					flex: 0 0 39px;
+					height: 39px;
+					margin-left: 8px;
+					margin-right: 18px;
+
+					@include media-breakpoint-down(md){
+						margin-left: 0;
+						margin-right: 15px;
+					}
+
+					.avatar{
+						width: 100%;
+						height: 100%;
+
+					}
+				}
+			}
+
+			.simple-box{
+				display: flex;
+				align-items: center;
+
+				.author-content{
+					flex: 1;
+					position: relative;
+
+					@include media-breakpoint-down(md){
+						padding-top: 4px;
+					}
+
+					.form-control{
+						position: relative;
+						height: auto;
+						padding: 0;
+
+						.MuiFormControl-root{
+							width: 100%;
+
+							textarea{
+								background-color: $videoDetail-comment-textarea-bg;
+								border: 0;
+								color: $txt-secondary;
+								padding: 9px 60px 9px 20px;
+								font-size: 1.6rem;
+								@include opacity(1);
+								@include border-radius(8px);
+
+								@include media-breakpoint-down(md){
+									font-size: 1.4rem;
+								}
+							}
+
+							.MuiOutlinedInput-notchedOutline{
+								border-color: transparent;
+							}
+
+							textarea::-webkit-input-placeholder {
+							  color: $txt-secondary;
+							  @include opacity(1);
+							}
+
+							textarea:-moz-placeholder { /* Firefox 18- */
+							  color: $txt-secondary;
+							  @include opacity(1);
+							}
+
+							textarea::-moz-placeholder {  /* Firefox 19+ */
+							  color: $txt-secondary;
+							  @include opacity(1);
+							}
+
+							textarea:-ms-input-placeholder {
+							  color: $txt-secondary;
+							  @include opacity(1);
+							}
+
+							textarea::placeholder {
+							  color: $txt-secondary;
+							  @include opacity(1);
+							}
+						}
+
+						.sent-comment{
+							position: absolute;
+							top: -3px;
+							right: 5px;
+							color: $videoDetail-comment-iconSend-color;
+
+							i{
+								font-size: 2rem;
+							}
+
+							@include media-breakpoint-down(md){
+								top: 0;
+
+								i{
+									font-size: 1.6rem;
+								}
+							}
+						}
+					}
+				}
+			}		
+
+			.comment-list__item{
+				display: flex;
+				margin-top: 20px;
+
+				.text{
+					flex: 1;
+
+					.name{
+						font-weight: 700;
+						color: $videoDetail-comment-name-color;
+						font-size: $videoDetail-comment-name-fontSize;
+						margin-bottom: 3px;
+						text-transform: capitalize;
+
+						@include media-breakpoint-down(md){
+							font-size: 1.4rem;
+						}
+					}
+
+					.text-inner{
+						color: $videoDetail-comment-text-color;
+						margin-bottom: 7px;
+
+						p{
+							margin-bottom: 10px;
+
+							&:last-child{
+								margin-bottom: 0;
+							}
+
+							@include media-breakpoint-down(md){
+								font-size: 1.4rem;
+							}
+						}
+
+						.MuiFormControl-root{
+							width: 100%;
+
+							.MuiFilledInput-underline:before{
+								border-bottom: 1px solid $MuiFilledInput-border-bottom;
+							}
+
+							.Mui-disabled.MuiFilledInput-underline:before{
+								border-bottom: 0;
+							}
+
+							.MuiFilledInput-root{
+								background-color: transparent;
+							}
+
+							textarea{
+								color: $videoDetail-comment-text-color;
+								padding: 7px 0;
+								@include opacity(1);
+							}
+						}
+					}
+
+					.time{
+						font-size: 1.1rem;
+						color: $text-eight;
+
+						a{
+							color: $primary;
+
+							&:hover{
+								text-decoration: underline;
+							}
+						}
+					}
+
+					.editComment-buttons{
+						display: flex;
+						justify-content: flex-end;
+
+						.MuiButtonBase-root{
+							background-color: $videoDetail-comment-textarea-bg;
+							color: $txt-secondary;
+							height: 33px;
+							padding: 3px 16px 1px;
+							margin-left: 5px;
+
+							span{
+								font-size: 1.4rem;
+								font-weight: 700;
+							}
+
+							&.btn-cancel{
+								background-color: transparent;
+
+								&:hover{
+									color: $primary;
+								}
+							}
+
+							&.btn-save{
+
+								&:hover{
+									background-color: $primary;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}	
+
+				.action-menu{
+					flex: 0 0 40px;
+					max-width: 40px;
+					text-align: right;
+					visibility: hidden !important;
+					@include opacity(0);
+					@include transition(all .2s linear);
+
+					@include media-breakpoint-down(md){
+						display: none;
+					}
+
+					&:hover{
+						visibility: inherit;
+						@include opacity(1);
+					}
+
+					.MuiIconButton-colorPrimary{
+						color: $txt-secondary;
+
+						i{
+							font-size: 3rem;
+						}
+
+						&:hover{
+							color: $primary;
+						}
+					}
+				}	
+
+				&:hover{
+
+					.action-menu{
+						visibility: inherit;
+						@include opacity(1);
+					}
+				}		
+			}	
+		}
+	}
+
+	.recommended{
+
+		.nl-card.horizontal{
+
+			.nl-card__img{
+
+				@include media-breakpoint-between(xl, xxl) {
+					flex: 0 0 150px;
+					max-width: 150px;
+				}
+			}
+		}
+	}
+}
+
+.livestream{
+
+	.live{
+		margin-bottom: 10px;
+
+		.live-inner{
+			position: relative;
+			padding-right: calc(25% - 18px);
+
+			@include media-breakpoint-down(xl){
+				padding-right: 300px;
+			}
+
+			@include media-breakpoint-down(lg){
+				padding-right: 0;
+			}
+
+			.live-player{
+				position: relative;
+				overflow: hidden;
+
+				.live-player__inner{
+					position: relative;
+					padding-top: 56.25%;
+
+					.mask-live{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						display: none;
+						justify-content: center;
+						align-items: center;
+						color: rgba(#fff,1);
+						left: 0;
+						top: 0;
+						z-index: 30;
+						background-color: rgba(#000,.5);
+
+						@include media-breakpoint-down(md){
+							font-size: 1.4rem;
+						}
+					}
+
+					&.no-ticket{
+
+						.mask-live{
+							display: flex;
+						}
+
+						video, iframe{
+							filter: blur(10px);
+
+							@include media-breakpoint-down(md){
+								filter: blur(5px);
+							}
+						}
+					}
+
+					.end{
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						background-color: $primary;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						color: #fff;
+						padding: 0 20px;
+						font-size: 2rem;
+						z-index: 30;
+						@include opacity(0);
+						@include transition(all .5s linear);
+						visibility: hidden;
+
+						@include media-breakpoint-down(md){
+							font-size: 1.4rem;
+						}
+
+						p{
+							width: 100%;
+							text-align: center;
+						}
+
+						i{
+							font-size: 4rem;
+							margin-top: 20px;
+
+							@include media-breakpoint-down(md){
+								font-size: 3rem;
+							}
+						}
+					}
+
+					&.end-live{
+
+						.end{
+							@include opacity(1);
+							visibility: inherit;
+						}
+					}
+
+					.emoji-randowm{
+						position: absolute;
+						bottom: -60px;
+						z-index: 31;
+						transition-property: all;
+						animation-timing-function: linear;
+
+						&.run{
+							animation-name: emoji;
+						}
+					}
+				}
+
+				@include media-breakpoint-down(lg){
+					width: 100%;
+				}
+
+				video, iframe{
+					// position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					
+				}
+			}
+
+			.emoji-container{
+				position: absolute;
+				left: 0;
+				top: 100%;
+				width: 100%;
+				z-index: 30;
+				padding: 12px 0 5px;
+				display: flex;
+				justify-content: flex-end;
+				padding-right: calc(25% - 18px);
+				margin-top: 2px;
+				@include transition(all .2s linear);
+
+				@include media-breakpoint-down(xl){
+					padding-right: 300px;
+				}
+
+				@include media-breakpoint-down(lg){
+					padding-right: 0;
+					position: relative;
+					top: 7px;
+					justify-content: center;
+				}
+
+				.emoji-list{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					.emoji-list__item{
+						flex: 0 0 auto;
+						cursor: pointer;
+						margin-right: 15px;
+						text-align: center;
+
+						img{
+							width: 40px;
+							transform-origin: bottom;
+							@include transition(all .2s linear);
+
+							@include media-breakpoint-down(xl){
+								width: 30px;
+							}
+
+							@include media-breakpoint-down(sm){
+								width: 25px;
+							}
+						}
+
+						&:last-child{
+							margin-right: 0;
+						}
+
+						&:hover{
+
+							img{
+
+								@include media-breakpoint-down(xl){
+									@include scale(1);
+								}
+							}
+						}
+
+						p{
+							color: $text-primary;
+							margin-top: 5px;
+							text-align: center;
+
+							@include media-breakpoint-down(sm){
+								font-size: 1.2rem;
+							}
+						}
+					}
+
+					.emoji-close{
+						display: none;
+					}
+				}
+			}
+
+			.live-chat{
+				width: calc(25% - 18px);
+				background-color: $live-chat-background;
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 100%;
+
+				@include media-breakpoint-down(xl){
+					width: 300px;
+				}
+
+				@include media-breakpoint-down(lg){
+					width: 100%;
+					height: 500px;
+					margin-top: 20px;
+					position: relative;
+
+					&.ah-mb{
+						height: inherit;
+					}
+				}
+
+				.live-chat__header{
+					height: 60px;
+					background-color: $live-chat-header-bg;
+					padding: 0 20px;
+					display: flex;
+					flex: 0 0 60px;
+					align-items: center;
+					justify-content: space-between;
+
+					@include media-breakpoint-down(xl){
+						padding: 0 15px;
+					}
+
+					h5{
+						font-size: $live-chat-title-fontSize;
+						color: $live-chat-title-color;
+					}
+
+					.hide-live{
+						font-weight: 400;
+						font-size: $live-chat-hide-fontSize;
+						color: $live-chat-hide-color;
+						cursor: pointer;
+
+						&:hover{
+							color: $primary;
+						}
+					}
+				}
+
+				.live-chat__main{
+					flex: 1 1 auto;
+					overflow: hidden;
+
+					.scrollbar-container{
+						padding: 20px 20px 5px;
+						max-height: 100%;
+
+						@include media-breakpoint-down(xl){
+							padding: 20px 15px 5px;
+						}
+					}
+				}
+
+				.live-chat__footer{
+					border-top: 1px solid $live-chat-border;
+					padding: 20px;
+
+					.form-control{
+						background-color: transparent;
+					}
+
+					@include media-breakpoint-down(xl){
+							padding: 20px 15px;
+						}
+				}
+			}
+		}
+	}
+
+
+	.menu{
+		flex-wrap: inherit !important;
+
+		.online{
+			order: 0 !important;
+			flex: 0 0 auto;
+		}
+
+		.menu-list{
+			width: inherit !important;
+
+			.menu-list__item{
+				flex-direction: row !important;
+				align-items: center;
+
+
+				i{
+					margin-right: 0 !important;
+
+					@include media-breakpoint-down(md){
+						margin-right: 10px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.chat-user{
+	display: flex;
+	margin-bottom: 20px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	.avatar{
+		flex: 0 0 auto;
+		width: 24px;
+		height: 24px;
+		overflow: hidden;
+		margin-right: 15px;
+		@include border-radius(50%);
+		background-color: #aaaaaa;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		i{
+			color: $text-secondary;
+			font-size: 2.4rem;
+		}
+
+		&.mt-7{
+			margin-top: 7px;
+		}
+
+		@include media-breakpoint-down(lg){
+			margin-top: -2px;
+		}
+	}
+
+	.content{
+		flex: 1;
+
+		p{
+			color: $live-chat-mess-color;
+			word-break: break-all;
+
+			strong{
+				color: $live-chat-mess-strong-color;
+			}
+		}
+
+		@include media-breakpoint-down(xl){
+			font-size: 1.4rem;
+		}
+
+		.form-ctrl{
+			position: relative;
+			padding: 0;
+
+			.MuiFormControl-root{
+				width: 100%;
+
+				textarea, input{
+					background-color: $live-chat-textarea-background;
+					border: 0;
+					color: $txt-secondary;
+					padding: 9px 60px 9px 20px;
+					font-size: 1.6rem;
+					@include border-radius(8px);
+
+					@include media-breakpoint-down(xl){
+						font-size: 1.4rem;
+					}
+				}
+
+				.MuiOutlinedInput-notchedOutline{
+					border-color: transparent;
+				}
+			}
+
+			.sent-comment{
+				position: absolute;
+				right: 5px;
+				color: $live-chat-send;
+				top: 0;
+				bottom: 0;
+				margin: 0 auto;
+				@include media-breakpoint-down(xl){
+					font-size: 1.4rem;
+				}
+
+				i{
+					font-size: 2rem;
+				}
+
+				@include media-breakpoint-down(md){
+					top: 0;
+
+					i{
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.schedule{
+	background-color: $bg-sevent;
+	padding: 20px 0;
+	height: 100%;
+	overflow: hidden;
+	align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	@include border-radius(8px);
+
+	@include media-breakpoint-down(lg){
+		margin-top: 30px;
+	}
+
+	@include media-breakpoint-down(lg){
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+
+	.schedule-title{
+		color: $text-primary;
+		font-size: 1.4rem;
+		padding: 0 20px;
+	}
+
+	.schedule-time{
+		font-weight: 700;
+		font-size: 1.4rem;
+		color: $primary;
+		margin-top: 8px;
+		padding: 0 20px;
+	}
+
+	.btn{
+		width: calc(100% - 40px);
+		margin: 0 auto;
+		margin-top: 15px;
+	}
+
+	.bought-tickets__root{
+		margin-top: 15px;
+		flex: 1 1 auto;
+		position: relative;
+
+		.bought-tickets__height{
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 0 0 0 20px;
+			width: 100%;
+			height: 100%;
+
+			@include media-breakpoint-down(lg){
+				position: relative;
+			}
+		}
+
+		.ps{
+			padding-right: 20px;
+
+			.ps__rail-y{
+				@include opacity(.6);
+			}
+		}
+
+		.bought-tickets{
+			display: flex;
+			align-items: center;
+			background-color: rgba(#31c07b,.2);
+			color: #31c07b;
+			font-size: 1.4rem;
+			padding: 10px 20px 8px;
+			font-weight: 700;
+			min-height: 40px;
+			@include border-radius(8px);
+
+			i{
+				font-size: 2rem;
+				margin-right: 10px;
+			}
+		}
+
+		p{
+			font-size: 1.4rem;
+			color: $text-secondary;
+			margin-top: 10px;
+		}
+	}
+}
+
+.page-search{
+
+	.container{
+		width: 1000px;
+		max-width: 100%;
+	}
+
+	.page-search__head{
+		background-color: $pageSearch-head-background;
+		padding: 50px 0;
+
+		h2{
+			text-align: center;
+			font-size: $pageSearch-head-h2-fontSize;
+			color: $pageSearch-head-h2-color;
+
+			span{
+				color: $primary;
+			}
+		}
+
+		.form-search{
+			margin-top: 20px;
+			display: flex;
+			justify-content: center;
+
+			form{
+				width: 100%;
+			}
+
+			.block{
+				position: relative;
+				width: 400px;
+				max-width: 100%;
+				margin: 0 auto;
+
+				input[type="text"]{
+					width: $pageSearch-head-input-width;
+					background-color: $pageSearch-head-input-background;
+					color: $pageSearch-head-input-color;
+					font-size: 1.6rem;
+					border: 1px solid $pageSearch-head-input-color;
+					height: $pageSearch-head-input-height;
+					padding: 0 50px 0 20px;
+					@include border-radius(40px);
+					max-width: 100%;
+				}
+
+				input[type="submit"]{
+					width: $pageSearch-head-input-height;
+					height: 100%;
+					background: transparent;
+					border: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index: 5;
+				}
+
+				.MuiButtonBase-root{
+					position: absolute;
+					right: 6px;
+					top: 50%;
+					@include translate(0,-50%);
+
+					i{
+						font-size: 2.2rem;
+					}
+				}
+			}
+		}
+	}
+
+	.page-search__main{
+		padding: 50px 0;
+
+		.nl-card .nl-card__body{
+			display: flex;
+			flex-direction: column;
+
+			.date{
+				order: 2;
+			}
+
+			h4{
+				height: auto;
+			}
+		}
+
+		.search-title__right{
+			color: $text-secondary;
+			font-size: 2rem;
+			font-weight: 400;
+
+			@include media-breakpoint-down(lg){
+				margin-top: 30px;
+			}
+		}
+
+		.suggestion{
+			margin-top: 20px;
+
+			ul{
+				display: flex;
+				flex-wrap: wrap;
+
+				li{
+					margin-right: 10px;
+					margin-bottom: 10px;
+
+					a{
+						display: block;
+						padding: 5px 15px;
+						background-color: $pageSearch-main-liitem-background;
+						color: $pageSearch-main-liitem-text-color;
+						font-size: 1.4rem;
+						@include border-radius(20px);
+
+						&:hover{
+							background-color: $primary;
+							color: #fff;
+						}
+					}
+					
+				}
+			}
+		}
+
+		.most-searched{
+			margin-top: 20px;	
+
+			h5{
+				font-weight: 400;	
+				font-size: 1.2rem;
+				color: #7d7d7d;	
+			}
+
+			ul{
+				margin-top: 10px;	
+
+				li{
+					margin-bottom: 10px;
+
+					a{
+						color: $text-secondary;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include keyframes(emoji){
+	0%{
+		bottom: -60px;
+	}
+	50%{
+		bottom: 50%;
+		@include opacity(1);
+	}
+	80%{
+		bottom: 80%;
+		@include opacity(0);
+	}
+	100%{
+		bottom: 100%;
+		@include opacity(0);
+	}
+}

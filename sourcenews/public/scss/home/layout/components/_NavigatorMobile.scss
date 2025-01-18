@@ -1,0 +1,57 @@
+#nl-navMobile{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 500;
+	height: $navMobile-height;
+	background-color: $navMobile-background;
+	@include box-shadow($header-shadow);
+
+	.navMobile-inner{
+		display: flex;
+		flex: 1 1 0%;
+		height: 100%;
+
+		a{
+			color: $navMobile-text-color;
+			font-size: $navMobile-font-size;
+			display: flex;
+			flex: 1 1 0%;
+			-webkit-box-pack: center;
+		    justify-content: center;
+		    -webkit-box-align: center;
+		    align-items: center;
+		    flex-direction: column;
+
+		    i{
+		    	font-size: 2rem;
+		    	padding-bottom: 2px;
+		    }
+
+		    p{
+		    	font-weight: 700;
+		    }
+
+		    &.active{
+		    	color: $primary;
+		    }
+
+		    .noti-icon{
+				position: relative;
+				cursor: pointer;
+
+				&::after{
+					content: '';
+					position: absolute;
+					width: 6px;
+					height: 6px;
+					background-color: $primary;
+					right: 1px;
+					top: 3px;
+					@include border-radius(50%);
+				}
+			}
+		}
+	}
+}

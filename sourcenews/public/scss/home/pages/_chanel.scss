@@ -1,0 +1,124 @@
+.chanel-detail{
+	padding-bottom: $chanelDetail-paddingBot;
+
+	.chanel-detail__banner{
+		margin-top: -70px;
+
+		@include media-breakpoint-down(md){
+			margin-top: 0;	
+		}
+
+		.img{
+			position: relative;
+
+			img{
+							
+				@include media-breakpoint-up(xl){
+					height: calc(100vh - 150px);
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+
+			&::after{
+				position: absolute;
+				content: '';
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 208px;
+				z-index: 5;
+				background: $chanelDetail-banner-bgRadiant;
+
+				@include media-breakpoint-down(xxl){
+					height: 150px;
+				}
+
+				@include media-breakpoint-down(md){
+					height: 100px;
+				}
+			}
+		}
+	}
+
+	.chanel-detail__content{
+		margin-top: 50px;
+		position: relative;
+		z-index: 5;
+
+		h2{
+			color: $chanelDetail-title-color;
+			text-align: center;
+			font-size: $chanelDetail-title-fontSize;
+
+			@include media-breakpoint-down(md){
+				font-size: $chanelDetail-title-fontSize-MB;
+			}
+		}
+
+		.subtit{
+			text-align: center;
+			font-weight: 400;
+			font-size: $chanelDetail-subtit-fontSize;
+			color: $chanelDetail-subtit-color;
+			margin-top: 5px;
+		}
+
+		.dsp{
+			font-weight: 400;
+			font-size: $chanelDetail-description-fontSize;
+			color: $chanelDetail-description-color;
+			width: 900px;
+			max-width: 100%;
+			display: block;
+			margin: 0 auto;
+			margin-top: 25px;
+			height: $chanelDetail-description-height;
+			overflow: hidden;
+			line-height: $chanelDetail-description-lineHeight;
+			@include transition(all .2s linear);
+
+			@include media-breakpoint-down(md){
+				height: 145px;
+			}
+
+			&.show{
+				height: inherit;
+				@include transition(all .2s linear);
+			}
+
+			p{
+				margin-bottom: 20px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.page-search{
+		margin-top: 2%;
+		position: relative;
+		z-index: 5;		
+		h2 {
+			color: var(--color-text-primary);
+			text-align: left;
+			font-size: 1.8rem;
+		}
+	}
+
+	.chanel-detail__list{
+		margin-top: $chanelDetail-list-marginTop;
+
+		.nl-card{
+			margin-bottom: $chanelDetail-list-card-marginBot;
+		}
+	}
+}
+
+.nl-chanel{
+
+	.sl-section__content{
+		margin-bottom: 30px;
+	}
+}

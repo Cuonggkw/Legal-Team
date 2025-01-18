@@ -1,0 +1,39 @@
+@import 
+	'../../core/abstracts/functions',
+	'../../core/abstracts/variables',
+	'../../core/abstracts/mixins';
+
+
+
+$colors-light:(
+	primary-text: #3f4254,
+	secondary-text: #b5b5c3,
+	dark-light: #fff,
+	web-wash: #eaf1f7,
+	surface-background: #fff,
+	primary-border: #e2eaf9,
+	input-background: #fff,
+	aside-background: #242939,
+	aside-brand-background: #1f2433,
+	bgInput: #f3f6f9,
+	bgCheckbox: #f3f6f9,
+	textInput: #3f4254,
+	textHBa: #3f4254,
+	fillSvg: #111,
+	filterLogo : '',
+	MuiIconButton-background-hover: rgba(0, 0, 0, 0.04),
+);
+
+:root{
+	@each $name, $color in $colors-light{
+		--color-#{$name}: #{$color}
+	}
+
+	--theme: 'light'
+}
+
+.__tt-light-mode{
+	@each $name, $color in $colors-light{
+		--color-#{$name}: #{$color}
+	}
+}

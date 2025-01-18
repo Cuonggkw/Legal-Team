@@ -1,0 +1,85 @@
+#nl-footer{
+	width: 1620px;
+	max-width: 100%;
+	margin: 60px auto;
+	border-radius: 32px;
+	background-color: #140000;
+	height: 200px;
+	font-size: $footer-fontsize;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 120px;
+
+	@media screen and (min-width: 992px) {
+		gap: 60px;
+		max-width: 95%;
+		height: 170px;
+	}
+
+	.nl-footer__left{
+		.logo_footer{
+			width: 206.49px;
+			height: 80px;
+
+			@media screen and (min-width: 992px) {
+        width: 180px;
+				height: 70px;
+    	}
+		}
+	}
+
+	.nl-footer__right{
+		font-family: "Mulish";
+		line-height: 28px;
+		display: flex;
+		font-size: 20px;
+		color: #FCFCFD;
+		gap: 120px;
+
+		.left{
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			.nl-footer__email {
+				display: flex;
+				gap: 8px;
+	
+				.email_icon img {
+					width: 24px;
+					height: 24px;
+				}
+			}
+
+			.nl-footer__web {
+				display: flex;
+				gap: 8px;
+	
+				.web_icon img {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+
+		.right{
+			.nl-footer__phone{
+				display: flex;
+				gap: 8px;
+			}
+		}
+	}
+
+	// .nl-footer__right{
+	// 	font-family: "Mulish";
+	// 	color: #FCFCFD;
+	// 	font-weight: 400;
+	// 	line-height: 28px;
+	// 	font-size: 20px;
+
+	// 	@include media-breakpoint-down(md){
+	// 		font-size: 1.1rem;
+	// 	}
+	// }
+}

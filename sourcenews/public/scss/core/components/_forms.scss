@@ -1,0 +1,89 @@
+@import '../mixins/forms';
+
+
+.form-group {
+	display: flex;
+  	margin-bottom: $form-group-margin-bottom;
+  	align-items: $form-group-align-items;
+
+  	.form-group-label{
+  		min-width: $lbl-width;
+  		text-transform: $lbl-text-transform;
+  		font-size: $lbl-font-size;
+  		font-weight: $lbl-font-weight;
+  		font-family: $lbl-font-family;
+  	}
+
+  	.form-control{
+  		width: 100% !important;
+
+  		.MuiFormLabel-root{
+  			color: $lbl-Mui-color;
+  			text-transform: $lbl-Mui-text-transform;
+	  		font-size: $lbl-Mui-font-size;
+	  		font-weight: $lbl-Mui-font-weight;
+	  		font-family: $lbl-Mui-font-family;
+	  		transform: $lbl-Mui-transform;
+
+			&.MuiInputLabel-shrink{
+				color: $lbl-Mui-shrink-color;
+				transform: $lbl-Mui-shrink-transform;
+			}
+
+			&.Mui-focused{
+				color: $lbl-Mui-color-focus !important;
+			}
+  		}
+
+        .MuiFilledInput-adornedEnd{
+            padding-right: 15px;
+        }
+
+  		.MuiInputBase-root{
+    		cursor: text;
+  			color: $input-color;
+    		font-size: $input-font-size;
+    		font-family: $input-font-family;
+    		font-weight: $input-font-weight;
+    		line-height: $input-line-height;
+    		background-color: $input-background !important;
+    		@include border-radius($input-border-radius);
+
+    		&.Mui-focused{
+				background-color: $input-background-focus !important;
+			}
+
+    		.MuiInputBase-input{
+    			color: currentColor;
+    			padding: $input-padding;
+
+    			&.MuiFilledInput-input{
+    				padding: $input-Filled-padding;
+    			}
+
+    			&.MuiOutlinedInput-input{
+    				padding: $input-Outline-padding;
+    			}
+    		}
+
+			.MuiIconButton-root{
+
+				&:hover{
+					background-color: $MuiIconButton-background-hover;
+				}
+
+				.MuiSvgIcon-root{
+					fill: $MuiIconButton-color;
+					font-size: 1.8rem !important;
+				}
+			}
+  		}
+  	}
+}
+
+@include media-breakpoint-down(sm){
+
+	.form-group {
+	    flex-flow: row wrap;
+	}
+}
