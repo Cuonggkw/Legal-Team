@@ -18,6 +18,9 @@ class LegalHome extends React.Component{
 		this.state = {
 			dataPage: [],
 			dataOverviews: [],
+			dataService: [],
+			activeShadows: {}, // Quản lý trạng thái shadow của các dịch vụ
+			activeIndex: 0, // Vị trí hiện tại
 			isSort: "asc",
 			isSorting: (props.sort) ? props.sort : 'created_at',
 		}
@@ -26,7 +29,8 @@ class LegalHome extends React.Component{
 	async componentDidMount() {
 		this._isMounted = true;
 		this.getData();
-		this.getOverviews();		
+		this.getOverviews();
+		this.getService();	
 	}
 
 	componentWillUnmount(){
@@ -37,8 +41,20 @@ class LegalHome extends React.Component{
 		if(this.state.dataPage.length==0){
 			this.getData();
 			this.getOverviews();
+			this.getService();
 		}
 	}
+
+  handleToggleShadow = (id) => {
+    this.setState({
+      activeShadows: { [id]: !this.state.activeShadows[id] }, // Đổi trạng thái shadow
+    });
+  };
+
+	handleClick = (index) => {
+    this.setState({ activeIndex: index }); // Cập nhật vị trí
+  };
+
 
 	getData = () =>{
 		try{
@@ -60,10 +76,19 @@ class LegalHome extends React.Component{
 		  }
 	}
 
+	getService = () =>{
+		try{
+			this._isMounted && fetchApi(process.env.API_URL + `/get-services?sort=${this.state.isSorting}`).then(result=>this._isMounted&&this.setState({
+				dataService: result.data.data,
+			})).catch(e=>console.log(e));
+		} catch (e) {
+			console.log(e);
+		  }
+	}
+
 	render() {
 		let _data = typeof(this.state.dataPage[0]) !== 'undefined' ? this.state.dataPage[0] :[];
-		const { dataOverviews, dataPage } = this.state;
-		// console.log(dataOverviews);
+		const { dataOverviews, dataPage, dataService, activeShadows } = this.state;
 		return (
 			<React.Fragment>
 				<>
@@ -125,6 +150,30 @@ class LegalHome extends React.Component{
 										</div>
 									</div>
             		</div>
+								<div className="ser_title">Tax In-House cung cấp các dịch vụ</div>
+							</div>
+							
+							<div className="sl-section_services">
+								{dataService && dataService.length > 0 &&
+								dataService.map((item) => (
+									<div key={item.id} className={`services_all ${activeShadows[item.id] ? "active" : ""}`}
+										onClick={() => this.handleToggleShadow(item.id)}>
+										<img className="service_img"
+            					src={item.image != null ? `${process.env.CDN_URL_S3}/${item.image}` : ``}
+          					/>
+										<div className="service_header">{item.header}</div>
+										<div className="service_content" dangerouslySetInnerHTML={{__html: item.content}}></div>
+									</div>
+								))}
+								
+								<div className="page-fluid">
+									{[0, 1, 2, 3].map((index) => (
+										<div
+										key={index}
+										onClick={() => this.handleClick(index)}
+										className={`${this.state.activeIndex === index ? 'page-1' : 'page-2'}`}></div>
+									))}
+								</div>
 							</div>
 						</div>
 					</section>

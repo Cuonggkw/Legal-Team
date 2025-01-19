@@ -5,6 +5,8 @@ import { it } from "date-fns/locale";
 import React from "react";
 import {fetchApi,changeToSlug} from '@helpers/Common';
 import LegalHome from "@modules/Home/Components/LegalHome";
+import Introduce from "@modules/Home/Components/Introduce";
+
 /* Package Application */
 
 export default class extends React.Component {
@@ -93,6 +95,7 @@ export default class extends React.Component {
 						))}
 					</div>
 					<LegalHome />
+					<Introduce />
 				</section>
 			</React.Fragment>
 		)

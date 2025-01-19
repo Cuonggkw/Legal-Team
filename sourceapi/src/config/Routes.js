@@ -55,6 +55,7 @@ router.route('/footers-all').get((req, res) => { _Function.footers.getAll(req, r
 router.route('/all-overviews').get((req, res) => { _Function.overviews.getAll(req, res); });
 router.route('/all-solutions').get((req, res) => { _Function.solutions.getAll(req, res); });
 router.route('/get-categories').get((req, res) => { _Function.categories.getAll(req, res); });
+router.route('/get-services').get((req, res) => { _Function.services.getAll(req, res); });
 
 //CMS & CMS
 router.route('/login').post(_Validator.accounts('login'), (req, res) => _Function.accounts.login(req, res));

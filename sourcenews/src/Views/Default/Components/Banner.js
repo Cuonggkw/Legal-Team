@@ -104,10 +104,6 @@ class Banner extends React.Component {
 													))}
 												</div>
 										</div>
-										{/* <div className="shadow">
-											<div className="shadow-1"></div>
-											<div className="shadow-2"></div>
-										</div> */}
 									</>
 								)}
 							</Swiper>

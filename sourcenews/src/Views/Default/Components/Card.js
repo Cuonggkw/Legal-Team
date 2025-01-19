@@ -152,7 +152,7 @@ class Card extends React.Component{
 	    				</div>
 	    				}
 
-	    				{this.props.views&&
+	    				{this.props.views &&
 	    				<div className="views">
 	    					{(loading)?(
     							<Skeleton animation="wave" variant="text" width="70%" />
